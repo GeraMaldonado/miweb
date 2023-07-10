@@ -1,3 +1,7 @@
 se usara como bitacora, para comenzar a dar seguimiento
 se esta creandondo archivos nuevos pero nada de codigo, solo
 como seria el entorno
+
+
+
+Ahora estoy probando hacer nevas ramas
