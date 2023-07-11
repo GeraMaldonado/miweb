@@ -5,3 +5,6 @@ como seria el entorno
 
 
 Ahora estoy probando hacer nevas ramas
+
+
+actualizacion, debo comenzar a invesitgar sobre react viu y angular
