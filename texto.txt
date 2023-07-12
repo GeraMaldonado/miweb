@@ -9,3 +9,11 @@ Ahora estoy probando hacer nevas ramas
 
 actualizacion 10/07/2023, debo comenzar a invesitgar sobre react viu y angular
 Actualicacion 11/07/2023, hacer examenes de linkedine
+react = facebook 
+angular = google
+vue = Ninguna empresa importante, es mas una comunidad com
+otros: emberjs, esbelte, jango = python, duno = javascript, backend java
+y nodejs
+Aprende primero vue, pero es mejor pasarse a react, ese esta orientado para
+proyectos medianos aunque es un poco mas dificil que vue, y angular es para
+proyectos muy grandes
