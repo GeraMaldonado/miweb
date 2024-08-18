@@ -1,5 +1,4 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
   <Home/>
   <footer>
     <p>&copy Gerardo Maldonado. Derechos resesrvados</p>
@@ -17,6 +16,7 @@ export default {
 }
 </script>
 <style>
+@import './assets/styles.css';
 footer{ 
   height: 10vh;
   width: 100%;
@@ -24,7 +24,6 @@ footer{
   color: white;
   text-align: left;
   padding-left: 30px;
-  position: absolute;
   bottom: 0;
  }
 /* http://meyerweb.com/eric/tools/css/reset/ 
