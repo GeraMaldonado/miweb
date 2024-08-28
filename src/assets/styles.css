@@ -1,0 +1,47 @@
+.pantalla {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contenedorPantalla{
+  width: 80vw;
+  height: 70vh;
+  background-color: black;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contenedorContenido{
+  margin: 100px;
+}
+.titulo{
+/*  font-size: 40px;*/
+  font-size: 5vw;
+  color: white;
+  font-weight: 900;
+  text-align: center;
+}
+.texto{
+/*  font-size: 30px;*/
+  font-size: 2vw;
+  color: white;
+  font-weight: 500;
+}
+.etiqueta{
+  height: 15%;
+  width: 50%;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: blue;
+}
+.logo{
+  width: 50px;
+  background-color: pink;
+}
+html {
+  scroll-behavior: smooth;
+}
