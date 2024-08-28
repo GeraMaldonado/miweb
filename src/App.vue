@@ -1,4 +1,6 @@
 <template>
+  <header>    
+  </header>
   <Home/>
   <footer>
     <p>&copy Gerardo Maldonado. Derechos resesrvados</p>
