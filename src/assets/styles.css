@@ -1,6 +1,7 @@
 /*GENERAL*/
 html {
   scroll-behavior: smooth;
+  scrollbar-width: none;
 }
 .titulo{
   font-size: 5vmax;
