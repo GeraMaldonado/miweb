@@ -7,15 +7,9 @@
   </footer>
 </template>
 
-<script>
+<script setup>
 import Home from './views/Home.vue'
 
-export default {
-  name: 'App',
-  components: {
-    Home
-  }
-}
 </script>
 <style>
 @import './assets/styles.css';
