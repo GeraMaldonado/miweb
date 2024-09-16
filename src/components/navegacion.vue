@@ -17,7 +17,7 @@
   top: 0;
   background-color: purple;
   display: flex;
-  align-items: center; /* Alinea el contenido verticalmente en el centro */
+  align-items: center;
 }
 
 .navegador ul {
@@ -25,9 +25,9 @@
   flex-wrap: nowrap;
   margin: 0;
   padding: 0;
-  list-style-type: none; /* Elimina los puntos de la lista */
-  height: 100%; /* Asegura que el ul llene toda la altura del nav */
-  align-items: center; /* Alinea los elementos del ul verticalmente en el centro */
+  list-style-type: none;
+  height: 100%;
+  align-items: center;
 }
 
 .navegador li {
@@ -37,9 +37,9 @@
 a {
   color: white;
   text-decoration: none;
-  display: flex; /* Añadir flex al anchor */
-  align-items: center; /* Asegura que el texto dentro del anchor esté centrado verticalmente */
-  height: 100%; /* Asegura que el anchor llene toda la altura del li */
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
 a:hover {
