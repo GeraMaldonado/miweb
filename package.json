@@ -2,10 +2,10 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
-  "type":"module",
+  "type": "module",
   "scripts": {
     "dev": "vite --host",
-    "build": "vite build",
+    "build": "vite build && scp -r dist/* ubuntu@40.233.27.74:miweb/dist/",
     "preview": "vite preview"
   },
   "dependencies": {
