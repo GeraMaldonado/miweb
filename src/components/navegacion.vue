@@ -1,6 +1,6 @@
 <template>
   <nav class="navegador">
-    <button class="menu" @click="toggleMenu">Menú</button>
+    <button class="menu" @click="menuDesplegable">Menú</button>
     <ul v-show="menuVisible || !isMobile" class="navegadorElementos" id="navegador">
       <li><a href="#inicio" :style="{ color: colorValue1 }">Inicio</a></li>
       <li><a href="#habilidades" :style="{ color: colorValue2 }">Habilidades</a></li>
@@ -16,20 +16,20 @@ import { ref, onMounted, onUnmounted } from 'vue';
 const menuVisible = ref(false); 
 const isMobile = ref(false);
 
-const toggleMenu = () => {
+const menuDesplegable = () => {
   if (isMobile.value) {
     menuVisible.value = !menuVisible.value;
   }
 };
 
-const handleClickOutside = (event) => {
+const ocultarMenuClick = (event) => {
   const menu = document.getElementById('navegador');
   if (menu && !menu.contains(event.target) && !event.target.classList.contains('menu') && isMobile.value) {
     menuVisible.value = false;
   }
 };
 
-const updateMenuVisibility = () => {
+const actualizarVisionMenu = () => {
   isMobile.value = window.visualViewport.width < 600;
   if (!isMobile.value) {
     menuVisible.value = true; 
@@ -39,42 +39,25 @@ const updateMenuVisibility = () => {
 };
 
 onMounted(() => {
-  document.addEventListener('click', handleClickOutside);
-  window.addEventListener('resize', updateMenuVisibility);
+  document.addEventListener('click', ocultarMenuClick);
+  window.addEventListener('resize', actualizarVisionMenu);
   
-  updateMenuVisibility(); 
+  actualizarVisionMenu(); 
 
   const pantalla = window.visualViewport.height;
 
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
 
-    if (scrollY < pantalla - pantalla / 3) {
-      colorValue1.value = '#8280f0';
-      colorValue2.value = 'white';
-      colorValue3.value = 'white';
-      colorValue4.value = 'white';
-    } else if (scrollY >= pantalla - pantalla / 3 && scrollY < pantalla * 2 - pantalla / 3) {
-      colorValue1.value = 'white';
-      colorValue2.value = '#8280f0';
-      colorValue3.value = 'white';
-      colorValue4.value = 'white';
-    } else if (scrollY >= pantalla * 2 - pantalla / 3 && scrollY < pantalla * 3 - pantalla / 3) {
-      colorValue1.value = 'white';
-      colorValue2.value = 'white';
-      colorValue3.value = '#8280f0';
-      colorValue4.value = 'white';
-    } else {
-      colorValue1.value = 'white';
-      colorValue2.value = 'white';
-      colorValue3.value = 'white';
-      colorValue4.value = '#8280f0';
-    }
+    colorValue1.value = scrollY < pantalla - pantalla / 3 ? '#8280f0' : '#d7d7d7' 
+    colorValue2.value = scrollY >= pantalla - pantalla / 3 && scrollY < pantalla * 2 - pantalla / 3 ? '#8280f0' :'#d7d7d7' 
+    colorValue3.value = scrollY >= pantalla * 2 - pantalla / 3 && scrollY < pantalla * 3 - pantalla / 3 ? '#8280f0' :'#d7d7d7'
+    colorValue4.value = colorValue1.value == colorValue2.value && colorValue1.value == colorValue3.value ? '#8280f0' :'#d7d7d7'
   });
 });
 
 onUnmounted(() => {
-  document.removeEventListener('click', handleClickOutside);
+  document.removeEventListener('click', ocultarMenuClick);
   window.removeEventListener('resize', updateMenuVisibility);
 });
 
@@ -94,6 +77,7 @@ const colorValue4 = ref('white');
   display: flex;
   align-items: center;
   justify-content: space-between;
+  z-index: 100;
 }
 
 .navegador ul {
@@ -121,7 +105,7 @@ a {
 
 .curriculum {
   background-color: #8280f0;
-  color: white;
+  color: #d7d7d7;
   border-radius: 10px;
   padding: 1px 8px;
   margin-left: auto;
@@ -150,7 +134,7 @@ a {
   .menu {
     display: block;
     background-color: #333;
-    color: white;
+    color: #d7d7d7;
     padding: 10px;
     border: none;
     font-size: 18px;
