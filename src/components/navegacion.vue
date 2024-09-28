@@ -55,7 +55,7 @@ onMounted(() => {
     colorValue4.value = colorValue1.value == colorValue2.value && colorValue1.value == colorValue3.value ? '#8280f0' :'#d7d7d7'
   });
 });
-
+  
 onUnmounted(() => {
   document.removeEventListener('click', ocultarMenuClick);
   window.removeEventListener('resize', updateMenuVisibility);
