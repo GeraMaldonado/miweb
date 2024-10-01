@@ -8,12 +8,12 @@
         <img class="imagenHabilidad" src="../assets/1_tRlkqQL5xfgwHTFODp8LHw.webp" style="width: 40%;">
         <div class="contenedorOscuro">
           <div class="habilidades">
-            <div class="contenedorLogo"><img class="logo" src="../assets/habilidades/express.png" title="Express JS" alt="Logo del framework Express JS"></div>
-            <div class="contenedorLogo"><img class="logo" src="../assets/habilidades/mysql.png" title="MySQL" alt="Logo de la base de datos MySQL"></div>
-            <div class="contenedorLogo"><img class="logo" src="../assets/habilidades/neovim.png"title="NeoVIM" alt="Logo del editor de texto en terminal NeoVim"></div>
-            <div class="contenedorLogo"><img class="logo" src="../assets/habilidades/node.png" title="Node" alt="Logo del motor de ejecucion Node JS"></div>
-            <div class="contenedorLogo"><img class="logo" src="../assets/habilidades/ubuntu.png" title="GNU/Linux Ubuntu" alt="Logo del sistema operativo de GNU/Linux Ubuntu"></div>
-            <div class="contenedorLogo"><img class="logo" src="../assets/habilidades/vue.png" title="VUE3" alt="Logo del framework Vue3 JS"></div>
+            <div class="contenedorLogo" title="Express JS" ><img class="logo" src="../assets/habilidades/express.png" alt="Logo del framework Express JS"></div>
+            <div class="contenedorLogo" title="MySQL"><img class="logo" src="../assets/habilidades/mysql.png" alt="Logo de la base de datos MySQL"></div>
+            <div class="contenedorLogo" title="Neovim"><img class="logo" src="../assets/habilidades/neovim.png" alt="Logo del editor de texto en terminal NeoVim"></div>
+            <div class="contenedorLogo" title="Node"><img class="logo" src="../assets/habilidades/node.png" alt="Logo del motor de ejecucion Node JS"></div>
+            <div class="contenedorLogo" title="GNU/Linux Ubuntu"><img class="logo" src="../assets/habilidades/ubuntu.png" alt="Logo del sistema operativo de GNU/Linux Ubuntu"></div>
+            <div class="contenedorLogo" title="VUE 3"><img class="logo" src="../assets/habilidades/vue.png" alt="Logo del framework Vue3 JS"></div>
           </div>
         </div>
       </div>
