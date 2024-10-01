@@ -66,7 +66,7 @@ onMounted(() => {
 }
 
 .espacio {
-  background: linear-gradient(black 200vh,blue 70%, skyblue);
+  background: linear-gradient(#000000 200vh,#0000ff 70%, #2f2fff);
   height: 400vh;
   width: 100%;
 }
