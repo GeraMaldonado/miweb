@@ -12,11 +12,16 @@
             <textarea id="mensaje" name="menaje" placeholder="Mensaje" required />
             <button type=button>Enviar</button>
           </form>
-          <img class=logo src='../assets/contacto/github.png'>
-          <img class=logo src='../assets/contacto/linkedin.png'>
-          <img class=logo src='../assets/contacto/whatsapp.png'>
+          <img class=logoContacto src='../assets/contacto/github.png'>
+          <img class=logoContacto src='../assets/contacto/linkedin.png'>
+          <img class=logoContacto src='../assets/contacto/whatsapp.png'>
         </div>
       </div>
     </div>
   </div>
 </template>
+<style>
+.logoContacto{
+  width: 5%;
+}
+</style>
