@@ -22,6 +22,39 @@
 </template>
 
 <style scope>
+.contenedorP {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  min-width: 315px;
+}
+.imagenHabilidad {
+  margin-right: 10%; 
+}
+
+.contenedorLogo{
+  height: 90%;
+  width: 90%;
+  background-color: #d7d7d7;
+  display: flex;
+  border-radius: 10%;
+  align-items: center;
+  justify-content: center;
+}
+.logo{
+  width: 70%;
+  margin: 10px;
+}
+.habilidades{
+  margin: auto 5%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 5%;
+}
+
+
 .contenedorLogo{
   will-change: filter;
   transition: filter 300ms;
@@ -29,5 +62,15 @@
 .contenedorLogo:hover{
   filter: drop-shadow(0 0 2em #8280f0de)
 }
-
+@media only screen and (max-width: 871px) {
+  .imagenHabilidad{
+    display: none;
+  }
+  .etiqueta{
+    margin-right: 0%;
+  }
+  .contenedorP{
+    height: 100%;
+  }
+}
 </style>

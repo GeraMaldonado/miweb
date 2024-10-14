@@ -3,21 +3,25 @@ html {
   scrollbar-width: none;
 }
 .titulo{
-  font-size: 5vmax;
+  font-size: var(--altura-titulo);
   color: #d7d7d7  ;
   font-weight: 900;
   text-align: center;
+  display: flex;
 }
-.texto{
-  margin-top: 2vmax;
-  font-size: 2.5vmax;
-  color: #d7d7d7; 
-  line-height: 1.3;
-  font-weight: 500;
-  text-align: center;     
+.simbolo{
+  font-weight: 800;
+  color: rgb(124, 28, 124);
+
 }
+.destacador {
+  color: purple;
+  font-weight: bold;
+}
+
 .pantalla {
   height: 100vh;
+  min-width: 370px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,15 +37,14 @@ html {
 .contenedorOscuro{
   height: 80%;
   width: 100%;
+  min-width: 315px;
   background-color: #181818;
   border-radius: 25px;
   display: flex;
   align-items: center;
-  justify-content: center
+  justify-content: center;
 }
-.contenedorContenido{
-  margin: 5vmax;
-}
+
 .etiqueta{
   padding: 20px;
   margin-bottom: 5%;
@@ -50,51 +53,5 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #8280f0;
-}
-.contenedorP {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-}
-.imagenHabilidad {
-  margin-right: 10%; 
 }
 
-.contenedorLogo{
-  height: 90%;
-  width: 90%;
-  background-color: #d7d7d7;
-  display: flex;
-  border-radius: 10%;
-  align-items: center;
-  justify-content: center;
-}
-.logo{
-  width: 70%;
-  margin: 10px;
-}
-.habilidades{
-  margin: auto 5%;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-  grid-auto-rows: 1fr;
-  gap: 5%;
-}
-
-
-@media only screen and (max-width: 871px) {
-  .contenedorElementos{
-    align-items: center;
-  }
-  .imagenHabilidad{
-    display: none;
-  }
-  .etiqueta{
-    margin-right: 0%;
-  }
-  .contenedorP{
-    height: 100%;
-  }
-}
