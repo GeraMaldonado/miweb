@@ -1,21 +1,21 @@
-<template>
-  <div class="contenedorComponentes">
-    <Fondo />
-    <Navegacion />
-    <section id="inicio">
-      <Home />
-    </section>
-    <section id="habilidades">
-      <Habilidades />
-    </section>
-    <section id="proyectos">
-      <Proyectos />
-    </section>
-    <section id="contacto">
-      <Contacto />
-    </section>
-  </div>
-</template>
+  <template>
+    <div class="contenedorComponentes">
+      <Fondo />
+      <Navegacion />
+      <section id="inicio">
+        <Home />
+      </section>
+      <section id="habilidades">
+        <Habilidades />
+      </section>
+      <section id="proyectos">
+        <Proyectos />
+      </section>
+      <section id="contacto">
+        <Contacto />
+      </section>
+    </div>
+  </template>
 
 <script setup>
 import Navegacion from '../components/navegacion.vue';
