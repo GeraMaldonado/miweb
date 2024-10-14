@@ -15,6 +15,7 @@ import '@fontsource/roboto';
 <style>
 @import './assets/styles.css';
 @import './assets/reset.css';
+@import './assets/variables.css';
 
 body {
   font-family: 'Roboto', sans-serif;
