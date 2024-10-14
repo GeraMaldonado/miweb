@@ -2,7 +2,7 @@
   <div class="pantalla">
     <div class="contenedorElementos">
       <div class="etiqueta">
-        <h1 class="titulo">Habilidades</h1>
+        <h1 class="titulo"><span class="simbolo">&lt;</span>Habilidades<span class="simbolo">/&gt;</span></h1>
       </div>
       <div class="contenedorP">
         <img class="imagenHabilidad" src="../assets/1_tRlkqQL5xfgwHTFODp8LHw.webp" style="width: 40%;">

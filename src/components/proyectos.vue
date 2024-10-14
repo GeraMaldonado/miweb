@@ -2,7 +2,7 @@
   <div class=pantalla>
     <div class="contenedorElementos">
       <div class=etiqueta>
-        <h1 class=titulo>Proyectos</h1>
+        <h1 class="titulo"><span class="simbolo">&lt;</span>Proyectos<span class="simbolo">/&gt;</span></h1>
       </div>
       <div class=contenedorOscuro>
         <div class=proyectos>
