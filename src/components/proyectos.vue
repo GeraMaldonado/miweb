@@ -6,8 +6,7 @@
       </div>
       <div class=contenedorOscuro>
         <div class=proyectos>
-
-          <Card v-if="vista"
+          <Card v-if="vistaAnchoYAlto"
             v-for="(item, index) in prueba"
             :key="index"
             :titulo="item.titulo"
@@ -17,7 +16,7 @@
             :imagenGif="item.gif"
           ></Card>
 
-          <swiper v-if="!vista"
+          <swiper v-if="!vistaAnchoYAlto"
             :slides-per-view="1"
             :space-between="50"
             pagination
@@ -40,6 +39,7 @@
     </div>
   </div>
 </template>
+
 <script setup>
 import Card from "./card.vue"
 import { ref, onMounted, onBeforeUnmount} from "vue";
@@ -49,7 +49,7 @@ import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/swiper-bundle.css';
 import  'swiper/modules';
 
-const vista = ref(window.visualViewport.width > 600)
+const vistaAnchoYAlto = ref(window.visualViewport.width > 600 && window.visualViewport.height > 760);
 
 const prueba = ref([
   {
@@ -82,21 +82,20 @@ const prueba = ref([
   }
 ])
 
-
-const actualizacionAncho = () => {
-  vista.value = window.visualViewport.width > 600;
+const actualizacionAnchoYAlto = () => {
+  vistaAnchoYAlto.value = window.visualViewport.width > 600 && window.visualViewport.height > 760;
 };
 
-
 onMounted(() => {
-  window.addEventListener("resize", actualizacionAncho);
+  window.addEventListener("resize", actualizacionAnchoYAlto);
 });
 
 onBeforeUnmount(() => {
-  window.removeEventListener("resize", actualizacionAncho);
+  window.removeEventListener("resize", actualizacionAnchoYAlto);
 });
 
 </script>
+
 
 <style scope>
 .proyectos {
@@ -105,13 +104,17 @@ onBeforeUnmount(() => {
 
 @media only screen and (min-width: 600px) {
   .proyectos{
-    display: grid;
-    justify-items: center;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
+    padding: 30px;
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
   }
 }
-@media only screen and (max-width: 600px) {
+@media (max-width: 600px), (max-height: 760px){
   .swiper {
     width: 100%;
   }
@@ -119,6 +122,6 @@ onBeforeUnmount(() => {
     display: flex;
     justify-content: center;
     align-items: center;
-  }
+  } 
 }
 </style>
