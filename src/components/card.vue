@@ -138,7 +138,7 @@ const posicionDetalles = (event) => {
     }
   }
 }
-@media (max-height: 760px){
+@media (max-height: 460px){
   .contenedorCard{
     height: 100%;
     display: flex;

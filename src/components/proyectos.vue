@@ -32,6 +32,8 @@
                 :imagenGif="item.gif"
               />
             </swiper-slide>
+                        <div class="swiper-button-prev" @click="slideAnterior"></div>
+            <div class="swiper-button-next" @click="slideSiguiente"></div>
           </swiper>
 
         </div>
@@ -49,7 +51,7 @@ import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/swiper-bundle.css';
 import  'swiper/modules';
 
-const vistaAnchoYAlto = ref(window.visualViewport.width > 600 && window.visualViewport.height > 760);
+const vistaAnchoYAlto = ref(window.visualViewport.width > 600 && window.visualViewport.height > 460);
 
 const prueba = ref([
   {
@@ -83,7 +85,7 @@ const prueba = ref([
 ])
 
 const actualizacionAnchoYAlto = () => {
-  vistaAnchoYAlto.value = window.visualViewport.width > 600 && window.visualViewport.height > 760;
+  vistaAnchoYAlto.value = window.visualViewport.width > 600 && window.visualViewport.height > 460;
 };
 
 onMounted(() => {
@@ -114,7 +116,7 @@ onBeforeUnmount(() => {
     justify-content: center;
   }
 }
-@media (max-width: 600px), (max-height: 760px){
+@media (max-width: 600px), (max-height: 460px){
   .swiper {
     width: 100%;
   }
