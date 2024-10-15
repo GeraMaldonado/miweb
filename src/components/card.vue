@@ -134,15 +134,37 @@ const posicionDetalles = (event) => {
 @media only screen and (min-width: 600px) {
   .contenedorCard:hover {
     .detalles {
-
       display: flex;
-
     }
   }
 }
-
-@media only screen and (max-width: 600px) {
+@media (max-height: 760px){
   .contenedorCard{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+  }
+  .detalles {
+    position: sticky;
+    display: flex;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    width: 35%;
+    height: auto;
+    max-height: 150px;
+    overflow: scroll;
+    scrollbar-width: none;
+    .detallesTitulo, .detallesTecnologias{
+      display: none;
+    }
+  }
+}
+@media (max-width: 600px){
+  .contenedorCard{
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -150,16 +172,19 @@ const posicionDetalles = (event) => {
   }
 
   .detalles {
-      position: sticky;
-      display: flex;
-      z-index: 10;
-      top: 50%;
-      left: 50%;
-      width: 80%;
-      height: 40%;
-      .detallesTitulo, .detallesTecnologias{
-        display: none;
-      }
+    position: sticky;
+    display: flex;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    height: auto;
+    max-height: 120px;
+    overflow: scroll;
+    scrollbar-width: none;
+    .detallesTitulo, .detallesTecnologias{
+      display: none;
+    }
   }
 }
 </style>
