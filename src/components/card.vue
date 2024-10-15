@@ -162,6 +162,13 @@ const posicionDetalles = (event) => {
     }
   }
 }
+
+@media (max-height: 360px){
+  .proyectoCard {
+    height: 50vh;
+  }
+}
+
 @media (max-width: 600px){
   .contenedorCard{
     height: 100%;
@@ -187,4 +194,6 @@ const posicionDetalles = (event) => {
     }
   }
 }
+
+
 </style>
