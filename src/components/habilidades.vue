@@ -31,12 +31,10 @@
   height: 100%;
   min-width: 315px;
 }
-
 .imagenHabilidad {
   margin-right: 10%;  
   height: auto;
 }
-
 .habilidades{
   display: flex;
   flex-wrap: wrap;
@@ -44,7 +42,6 @@
   align-items: center;
   justify-content: center;
 }
-
 .contenedorLogo {
   height: 112px;
   width: 112px;
@@ -53,35 +50,27 @@
   border-radius: 10%;
   align-items: center;
   justify-content: center;
-
 }
-
 .logo {
   width: 85px;
 }
-
 .contenedorLogo {
   will-change: filter;
   transition: filter 300ms;
 }
-
 .contenedorLogo:hover {
   filter: drop-shadow(0 0 2em #8280f0de);
 }
 
-/* Ajustes responsive */
 @media only screen and (max-width: 871px) {
   .imagenHabilidad {
     display: none;
   }
-
   .etiqueta {
     margin-right: 0%;
   }
-
   .contenedorP {
     height: 100%;
   }
 }
-
 </style>
