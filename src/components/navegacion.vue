@@ -98,7 +98,7 @@ a {
   display: flex;
   align-items: center;
   height: 100%;
-  font-size: large;
+  font-size: var(--altura-texto-navegacion);
   font-weight: 900;
 }
 
@@ -110,7 +110,7 @@ a {
   padding: 1px 8px;
   margin-left: auto;
   margin-right: 1%;
-  font-size: medium;
+  font-size: var(--altura-texto-navegacion);
 }
 
 .menu {
