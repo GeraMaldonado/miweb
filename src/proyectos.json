@@ -1,0 +1,41 @@
+[
+    { 
+        "titulo": "CECODIC", 
+        "tecnologia": ["/habilidades/vue.png", "/habilidades/mysql.png", "/habilidades/node.png", "/habilidades/express.png"], 
+        "detalles": "Plataforma de eventos para la institucion CECODIC. Backend desarrollado en JavaScript utilizando Node.js con el framework Express, Base de datos implementada en MySQL, Frontend construido con Vue.js. Arquitectura: MVC.", 
+        "imagen": "/proyectos/cecodic.jpeg", 
+        "gif": "/proyectos/cecodic.gif",
+        "link": "https://github.com/GeraMaldonado/cecodic"
+    },
+    { 
+        "titulo": "Foro-Hub", 
+        "tecnologia": ["/habilidades/java.png","/habilidades/spring.svg","/habilidades/mysql.png"], 
+        "detalles": "Proyecto de práctica que emula un foro, con secciones de tópicos (CRUD) y usuarios. El backend fue desarrollado con Spring Boot 3 y se utiliza POSTMAN para probar los endpoints. Los usuarios deben crearse manualmente en la base de datos MySQL. Arquitectura: MVC. ", 
+        "imagen": "/proyectos/Foro-Hub.jpg", 
+        "gif": "/proyectos/Foro-Hub.gif",
+        "link": "https://github.com/GeraMaldonado/foro-hub"
+    },
+    { 
+        "titulo": "API-Libros", 
+        "tecnologia": ["/habilidades/java.png","/habilidades/spring.svg","/habilidades/postgres.png"], 
+        "detalles": "Proyecto de API para gestionar libros y autores, desarrollado con Spring. Permite realizar consultas sobre libros y autores a través de la consola. Funciona con solicitudes del usuario por terminal y fue diseñado para facilitar la gestión de información literaria. Arquitectura: MVC.", 
+        "imagen": "/proyectos/API-Libros.jpg", 
+        "gif": "/proyectos/API-Libros.gif",
+        "link": "https://github.com/GeraMaldonado/api-libros"
+    },
+    { 
+        "titulo": "Calculadora-IMC", 
+        "tecnologia": ["/habilidades/csharp.png", "/habilidades/maui.svg", "/habilidades/sqlite.svg"], 
+        "detalles": "Aplicacion desarrollada en C# utilizando MAUI .NET. Permite gestionar usuarios, incluyendo la opción de ingresar, editar y eliminar perfiles. Además, proporciona seguimiento de los usuarios al calcular su IMC, %GC, y peso ideal. Arquitectura: MVVM.", 
+        "imagen": "/proyectos/Calculadora-IMC.jpg", 
+        "gif": "/proyectos/Calculadora-IMC.gif"
+    },
+    { 
+        "titulo": "Blog", 
+        "tecnologia": ["/habilidades/vue.png"], 
+        "detalles": "El proyecto \"myBlog\" es un blog personal desarrollado en Vue.js, sin backend por el momento. Actualmente, los posts se crean directamente como componentes de Vue. El objetivo a futuro es agregar un backend para permitir la creación dinámica de posts y comentarios. Arquitectura: Component-Based", 
+        "imagen": "/proyectos/Blog.jpg", 
+        "gif": "/proyectos/Blog.gif",
+        "link": "https://github.com/GeraMaldonado/myBlog"
+    }
+]
