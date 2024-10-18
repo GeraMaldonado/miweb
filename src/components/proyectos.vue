@@ -1,12 +1,12 @@
 <template>
-  <div class=pantalla>
+  <div class="pantalla">
     <div class="contenedorElementos">
-      <div class=etiqueta>
+      <div class="etiqueta">
         <h1 class="titulo"><span class="simbolo">&lt;</span>Proyectos<span class="simbolo">/&gt;</span></h1>
       </div>
-      <div class=contenedorOscuro>
-        <div class=proyectos>
-          <Card v-if="vistaAnchoYAlto"
+      <div class="contenedorOscuro">
+        <div class="proyectos">
+          <Card v-if="vistaAncho"
             v-for="(item, index) in prueba"
             :key="index"
             :titulo="item.titulo"
@@ -14,12 +14,14 @@
             :detalles="item.detalles"
             :imagen="item.imagen"
             :imagenGif="item.gif"
+            :link="item.link"
           ></Card>
 
-          <swiper v-if="!vistaAnchoYAlto"
+          <swiper
+            v-if="!vistaAncho"
+            :modules="[Navigation, Pagination]"
             :slides-per-view="1"
             :space-between="50"
-            pagination
             navigation
             loop
           >
@@ -30,12 +32,10 @@
                 :detalles="item.detalles"
                 :imagen="item.imagen"
                 :imagenGif="item.gif"
+                :link="item.link"
               />
             </swiper-slide>
-                        <div class="swiper-button-prev" @click="slideAnterior"></div>
-            <div class="swiper-button-next" @click="slideSiguiente"></div>
           </swiper>
-
         </div>
       </div>
     </div>
@@ -43,69 +43,48 @@
 </template>
 
 <script setup>
-import Card from "./card.vue"
-import { ref, onMounted, onBeforeUnmount} from "vue";
-import corajeJpeg from '../assets/coraje.jpeg'
-import corajeGif from '../assets/coraje.gif'
 import { Swiper, SwiperSlide } from 'swiper/vue';
-import 'swiper/swiper-bundle.css';
-import  'swiper/modules';
+import { Navigation, Pagination } from 'swiper/modules';
 
-const vistaAnchoYAlto = ref(window.visualViewport.width > 600 && window.visualViewport.height > 460);
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import Card from './card.vue';
+import { ref, onMounted, onBeforeUnmount } from 'vue';
+import proyectos from '../proyectos.json'
 
-const prueba = ref([
-  {
-  titulo: "CECODIC",
-  tecnologia: ["/habilidades/vue.png", "/habilidades/mysql.png", "/habilidades/node.png", "/habilidades/express.png"],
-  detalles: "Detalles de CECODIC",
-  imagen: corajeJpeg,
-  gif: corajeGif
-  },
-  {
-  titulo: "Blog",
-  tecnologia: ["/habilidades/vue.png"],
-  detalles: "Detalles del blog",
-  imagen: corajeJpeg,
-  gif: corajeGif
-  },
-  {
-  titulo: "Calculadora IMC",
-  tecnologia:["/habilidades/dotnet.svg", "/habilidades/sqlite.svg"],
-  detalles: "detalles de la calculadora",
-  imagen: corajeJpeg,
-  gif: corajeGif
-  },
-  {
-  titulo: "Fiscalia",
-  tecnologia: ["/habilidades/csharp.png", "/habilidades/dotnet.svg", "/habilidades/sqlserver.png"],
-  detalles: "Detalles de lo de fiscalia",
-  imagen: corajeJpeg,
-  gif: corajeGif
-  }
-])
+const vistaAncho = ref(window.visualViewport.width > 800);
 
-const actualizacionAnchoYAlto = () => {
-  vistaAnchoYAlto.value = window.visualViewport.width > 600 && window.visualViewport.height > 460;
+const prueba = proyectos;
+
+const actualizacionAncho = () => {
+  vistaAncho.value = window.visualViewport.width > 800;
 };
 
 onMounted(() => {
-  window.addEventListener("resize", actualizacionAnchoYAlto);
+  window.addEventListener('resize', actualizacionAncho);
 });
 
 onBeforeUnmount(() => {
-  window.removeEventListener("resize", actualizacionAnchoYAlto);
+  window.removeEventListener('resize', actualizacionAncho);
 });
-
 </script>
 
-
-<style scope>
+<style scoped>
 .proyectos {
   width: 100%;
+  padding: 10px;
 }
 
-@media only screen and (min-width: 600px) {
-  .proyectos{
+.swiper-button-prev,
+.swiper-button-next {
+  color: #fff;
+  font-size: 20px;
+  z-index: 10;
+}
+
+@media only screen and (min-width: 800px) {
+  .proyectos {
     padding: 30px;
     width: 100%;
     height: 90%;
@@ -116,14 +95,16 @@ onBeforeUnmount(() => {
     justify-content: center;
   }
 }
-@media (max-width: 600px), (max-height: 460px){
+
+@media (max-width: 800px){
   .swiper {
     width: 100%;
   }
+
   .swiper-slide {
     display: flex;
     justify-content: center;
     align-items: center;
-  } 
+  }
 }
 </style>
