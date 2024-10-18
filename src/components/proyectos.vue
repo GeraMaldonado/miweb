@@ -87,12 +87,13 @@ onBeforeUnmount(() => {
   .proyectos {
     padding: 30px;
     width: 100%;
-    height: 90%;
+    height: 85%;
     display: flex;
     flex-wrap: wrap;
     gap: 40px;
     align-items: center;
     justify-content: center;
+    overflow: scroll;
   }
 }
 
