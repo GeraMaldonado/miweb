@@ -18,7 +18,7 @@
         />
       </div>
     </div>
-    <p @click="handleClick">{{ link }}</p>
+    <p @click="abrirLink"> link </p>
     <div class="detalles" :style="{ top: ejeY, left: ejeX }">
       <div class="detallesTitulo">{{ titulo }}</div>
       <div class="detallesTecnologias">
@@ -62,8 +62,8 @@ const posicionDetalles = (event) => {
   }
 };
 
-const handleClick = () => {
-    window.open(props.link, );
+const abrirLink = () => {
+    window.open(props.link);
 };
 
 </script>
@@ -177,20 +177,9 @@ const handleClick = () => {
     gap: 20px;
   }
 
-  .detalles {
-    position: sticky;
-    display: flex;
-    z-index: 10;
-    top: 50%;
-    left: 50%;
-    width: 250px;
-    height: auto;
-    max-height: 120px;
-    overflow: scroll;
-    scrollbar-width: none;
-    .detallesTitulo, .detallesTecnologias{
-      display: none;
-    }
+
+  .detallesTitulo, .detallesTecnologias{
+    display: none;
   }
 }
 
