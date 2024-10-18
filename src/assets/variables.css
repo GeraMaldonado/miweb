@@ -4,5 +4,13 @@
     --altura-texto: 2.5vmax;
     --altura-titulo: 5vmax;
     --altura-texto-navegacion : 1.2vmax;
+    --color-elementos-transparentes: rgba(55, 54, 120, 0.757);
+    --altura-titulo-proyecto: 25px;
+    --anchura-titulo-proyecto: 700;
+    --color-elementos-transparentes-detalles: rgba(55, 54, 120, 0.961);
+    --color-blanco: #d7d7d7;
+    --altura-texto-descripcion: 14px;
+    --interlineado: 1.5; 
+
 }
 
