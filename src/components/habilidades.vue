@@ -34,6 +34,9 @@
 .imagenHabilidad {
   margin-right: 10%;  
   height: auto;
+  border-radius: 10px;
+  mask-image: linear-gradient(black 80%, transparent); 
+  
 }
 .habilidades{
   display: flex;
@@ -74,4 +77,5 @@
     height: 100%;
   }
 }
+
 </style>
