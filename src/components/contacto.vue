@@ -27,9 +27,11 @@
             </table>
           </form>
           <div class="logosContactos">
-            <a href="https://github.com/GeraMaldonado"><img class="logoContacto" src="../assets/contacto/github.png" /></a>
-            <a href="https://www.linkedin.com/in/gerardo-maldonado-félix/"><img class="logoContacto" src="../assets/contacto/linkedin.png" /></a>
-            <a href="https://wa.me/+524921244858"><img class="logoContacto" src="../assets/contacto/whatsapp.png" /></a>
+            <div class="circuloContacto"><a href="https://github.com/GeraMaldonado"><img class="logoContacto" src="../assets/contacto/github.png" /></a></div>
+            <div class="circuloContacto"><a href="https://www.linkedin.com/in/gerardo-maldonado-félix/"><img class="logoContacto" src="../assets/contacto/linkedin.png" /></a></div>
+            <div class="circuloContacto"><a href="https://wa.me/+524921244858"><img class="logoContacto" src="../assets/contacto/whatsapp.png" /></a></div>
+            
+            
           </div>
         </div>
       </div>
@@ -62,9 +64,9 @@ const sendEmail = () => {
 
   emailjs.send(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_TEMPLATE_ID, templateParams)
     .then(response => {
-      console.log('SUCCESS!', response.status, response.text);
+      console.log('Si estas leyendo esto, muchas gracias por tomarte el tiempo y mandarme un mensaje, ya sea de apoyo, una observacion, una correcion, una critica, muchas gracias :\')');
       alert('Correo enviado con éxito.');
-
+      
       form.nombre = '';
       form.email = '';
       form.mensaje = '';
@@ -82,47 +84,49 @@ const sendEmail = () => {
 .logoContacto {
   width: 50px;
 }
-.contacto {
-  width: 80%;
-  height: 90%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
 
-.contenidoContacto{
+.contacto {
+  width: 100%;
   height: 100%;
   display: flex;
-
   flex-direction: column;
-}
-.apartadoContacto{
-  height: 80%;
-  display: flex;
   align-items: center;
   justify-content: center;
-  margin: 10px;
-  input, textarea{
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
-    min-width: 200px;
-    width: 100%;
-    border-radius: 5%;
-    height: 30px;
-    resize: none;
-    border: none;
-    padding: 10px;
-    font-weight: 500;
-  }
+}
+
+.apartadoContacto{
+  display: grid;
+  place-items: center;
+}
+
+.apartadoContacto input, .apartadoContacto textarea{
+  min-width: 280px;
+  width: 30vw;
+  margin: 8px;
+  border-radius: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  border: none;
+}
+
+.apartadoContacto input{
+  height: 40px;
+}
+.apartadoContacto textarea{
+  height: 120px;
+  resize: none;
 }
 .logosContactos{
-  height: 20%;
+  display: flex;
+  gap: 20px;
+  margin-top: 30px
 }
-.apartadoMensaje{
-  height: 150px;
-  textarea{
-    height: 150px;
-  }
+.circuloContacto{
+  height: 60px;
+  width: 60px;
+  background-color: white;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
 }
 </style>  
