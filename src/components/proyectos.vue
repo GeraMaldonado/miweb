@@ -94,6 +94,7 @@ onBeforeUnmount(() => {
     align-items: center;
     justify-content: center;
     overflow: scroll;
+    scrollbar-width:none;
   }
 }
 
