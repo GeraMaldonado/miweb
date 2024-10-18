@@ -49,10 +49,17 @@ onMounted(() => {
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY;
 
-    colorValue1.value = scrollY < pantalla - pantalla / 3 ? '#8280f0' : '#d7d7d7' 
-    colorValue2.value = scrollY >= pantalla - pantalla / 3 && scrollY < pantalla * 2 - pantalla / 3 ? '#8280f0' :'#d7d7d7' 
-    colorValue3.value = scrollY >= pantalla * 2 - pantalla / 3 && scrollY < pantalla * 3 - pantalla / 3 ? '#8280f0' :'#d7d7d7'
-    colorValue4.value = colorValue1.value == colorValue2.value && colorValue1.value == colorValue3.value ? '#8280f0' :'#d7d7d7'
+    if(pantalla >  630){
+      colorValue1.value = scrollY < pantalla - pantalla / 3 ? '#8280f0' : '#d7d7d7' 
+      colorValue2.value = scrollY >= pantalla - pantalla / 3 && scrollY < pantalla * 2 - pantalla / 3 ? '#8280f0' :'#d7d7d7' 
+      colorValue3.value = scrollY >= pantalla * 2 - pantalla / 3 && scrollY < pantalla * 3 - pantalla / 3 ? '#8280f0' :'#d7d7d7'
+      colorValue4.value = colorValue1.value == colorValue2.value && colorValue1.value == colorValue3.value ? '#8280f0' :'#d7d7d7'
+    }else{
+      colorValue1.value = scrollY < 420 ? '#8280f0' : '#d7d7d7' 
+      colorValue2.value = scrollY >= 420 && scrollY < 1050 ? '#8280f0' :'#d7d7d7' 
+      colorValue3.value = scrollY >= 1050 && scrollY < 1680 ? '#8280f0' :'#d7d7d7'
+      colorValue4.value = colorValue1.value == colorValue2.value && colorValue1.value == colorValue3.value ? '#8280f0' :'#d7d7d7'
+    }
   });
 });
   
