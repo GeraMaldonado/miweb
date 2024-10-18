@@ -1,16 +1,38 @@
 <template>
   <div class="contenedorCard">
-    <div class="proyectoCard" @mousemove="posicionDetalles" :style="{ backgroundImage: `url(${fondoActual})` }"
-      @mouseover="fondoActual = imagenGif" @mouseleave="fondoActual = imagen">
+    <div 
+      class="proyectoCard" 
+      @mousemove="posicionDetalles" 
+      :style="{ backgroundImage: `url(${fondoActual})` }"
+      @mouseover="fondoActual = imagenGif" 
+      @mouseleave="fondoActual = imagen"
+    >
       <div class="tituloProyecto">{{ titulo }}</div>
-      <div class="tecnologiaProyecto"><img v-for="(icon, index) in tecnologia" :key="index" :src="icon"
-          alt="Icono de tecnología" class="iconoTecnologia" /></div>
+      <div class="tecnologiaProyecto">
+        <img 
+          v-for="(icon, index) in tecnologia" 
+          :key="index" 
+          :src="icon" 
+          alt="Icono de tecnología" 
+          class="iconoTecnologia" 
+        />
+      </div>
     </div>
+    <p @click="handleClick">{{ link }}</p>
     <div class="detalles" :style="{ top: ejeY, left: ejeX }">
       <div class="detallesTitulo">{{ titulo }}</div>
-      <div class="detallesTecnologias"><img v-for="(icon, index) in tecnologia" :key="index" :src="icon"
-          alt="Icono de tecnología" class="iconoTecnologia" /> </div>
-      <div class="detallesDescripcion">{{ detalles }}</div>
+      <div class="detallesTecnologias">
+        <img 
+          v-for="(icon, index) in tecnologia" 
+          :key="index" 
+          :src="icon" 
+          alt="Icono de tecnología" 
+          class="iconoTecnologia" 
+        />
+      </div>
+      <div class="detallesDescripcion">
+        {{ detalles }}
+      </div>
     </div>
   </div>
 </template>
@@ -23,21 +45,26 @@ const props = defineProps({
   tecnologia: Array,
   detalles: String,
   imagen: String,
-  imagenGif: String
-})
+  imagenGif: String,
+  link: String
+});
 
-const ejeY = ref("")
-const ejeX = ref("")
-const fondoActual = ref(props.imagen)
-const pantallaX = window.visualViewport.width
-const pantallaY = window.visualViewport.height
+const ejeY = ref("");
+const ejeX = ref("");
+const fondoActual = ref(props.imagen);
+const pantallaX = window.visualViewport.width;
+const pantallaY = window.visualViewport.height;
 
 const posicionDetalles = (event) => {
   if (window.visualViewport.width > 600) {
-    ejeX.value = (event.clientX + 250) > pantallaX ? `${event.clientX - 250}px` : `${event.clientX + 20}px`
-    ejeY.value = (event.clientY + 350) > pantallaY ? `${event.clientY - 350}px` : `${event.clientY + 20}px`
+    ejeX.value = (event.clientX + 250) > pantallaX ? `${event.clientX - 250}px` : `${event.clientX + 20}px`;
+    ejeY.value = (event.clientY + 350) > pantallaY ? `${event.clientY - 350}px` : `${event.clientY + 20}px`;
   }
-}
+};
+
+const handleClick = () => {
+    window.open(props.link, );
+};
 
 </script>
 
@@ -58,7 +85,7 @@ const posicionDetalles = (event) => {
 
 .tituloProyecto,
 .tecnologiaProyecto {
-  background-color: #373678c1;
+  background-color: var(--color-elementos-transparentes);
   height: 100%;
   width: 100%;
   text-align: center;
@@ -81,14 +108,14 @@ const posicionDetalles = (event) => {
 }
 
 .detallesTitulo, .tituloProyecto {
-    color: #d7d7d7;
-    font-size: 25px;
-    font-weight: 700;
+    color: var(--color-texto);
+    font-size: var(--altura-titulo-proyecto);
+    font-weight: var(--anchura-titulo-proyecto);
   }
 
 .detalles {
-  background-color: #373678f5;
-  border-radius: 25% 5%;
+  background-color: var(--color-elementos-transparentes-detalles);
+  border-radius: 15% 2%;
   position: fixed;
   display: none;
   width: 200px;
@@ -99,77 +126,49 @@ const posicionDetalles = (event) => {
   gap: 20px;
   z-index: 10;
   pointer-events: none;
+  overflow: hidden;
 
   .detallesTecnologias {
     display: flex;
     width: 100%;
     gap: 10px;
     flex-wrap: wrap;
+    align-content: center;
     .iconoTecnologia {
       margin: auto;
     }
   }
-
   .detallesDescripcion {
-    background-color: #d7d7d7;
+    background-color: var(--color-blanco);
     width: 100%;
     height: auto;
+    max-height: 190px;
     padding: 5px;
+    border-radius: 2% 2% 10% 2%;
+    overflow: hidden;
+    font-size: var(--altura-texto-descripcion);
+    line-height: var(--interlineado);
   }
 }
 
 .iconoTecnologia {
-  width: 20%;
+  width: 15%;
   margin: 5px 5px;
   border-radius: 10%;
   padding: 5px;
   background-color: #d7d7d7;
-  text-align: justify;
 }
 
-.iconoInformacion {
-  display: none;
-}
-
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 800px) {
   .contenedorCard:hover {
     .detalles {
       display: flex;
     }
   }
 }
-@media (max-height: 460px){
-  .contenedorCard{
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 20px;
-  }
-  .detalles {
-    position: sticky;
-    display: flex;
-    z-index: 10;
-    top: 50%;
-    left: 50%;
-    width: 35%;
-    height: auto;
-    max-height: 150px;
-    overflow: scroll;
-    scrollbar-width: none;
-    .detallesTitulo, .detallesTecnologias{
-      display: none;
-    }
-  }
-}
 
-@media (max-height: 360px){
-  .proyectoCard {
-    height: 50vh;
-  }
-}
 
-@media (max-width: 600px){
+@media (max-width: 800px){
   .contenedorCard{
     height: 100%;
     display: flex;
@@ -184,7 +183,7 @@ const posicionDetalles = (event) => {
     z-index: 10;
     top: 50%;
     left: 50%;
-    width: 80%;
+    width: 250px;
     height: auto;
     max-height: 120px;
     overflow: scroll;
@@ -194,6 +193,5 @@ const posicionDetalles = (event) => {
     }
   }
 }
-
 
 </style>
