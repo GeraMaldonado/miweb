@@ -25,3 +25,8 @@ import Proyectos from '../components/proyectos.vue';
 import Contacto from '../components/contacto.vue';
 import Fondo from '@/components/fondo.vue';
 </script>
+<style scoped>
+section{
+  min-height: 630px;
+}
+</style>

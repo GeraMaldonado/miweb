@@ -36,6 +36,7 @@ html {
 }
 .contenedorOscuro{
   height: 80%;
+  min-height: 400px;
   width: 100%;
   min-width: 315px;
   background-color: #181818;

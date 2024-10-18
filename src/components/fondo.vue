@@ -55,6 +55,7 @@ onMounted(() => {
 .espacio {
   background: linear-gradient(rgb(12, 12, 12) 350vh,#0000ff 150%);
   height: 400vh;
+  min-height: calc(630px * 4);
   width: 100%;
   min-width: 370px;
 }
