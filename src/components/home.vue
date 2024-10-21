@@ -73,7 +73,7 @@ const escribiendo = ref(true);
 let intervalo;
 
 const empezarAnimacion = () => {
-  intervalo = setInterval(animacionEscribir, 70);
+  intervalo = setInterval(animacionEscribir, 120);
 };
 
 const animacionEscribir = () => {
