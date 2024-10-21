@@ -6,6 +6,7 @@
       :style="{ backgroundImage: `url(${fondoActual})` }"
       @mouseover="fondoActual = imagenGif" 
       @mouseleave="fondoActual = imagen"
+      @click="abrirLink"
     >
       <div class="tituloProyecto">{{ titulo }}</div>
       <div class="tecnologiaProyecto">
@@ -18,7 +19,6 @@
         />
       </div>
     </div>
-    <p @click="abrirLink"> link </p>
     <div class="detalles" :style="{ top: ejeY, left: ejeX }">
       <div class="detallesTitulo">{{ titulo }}</div>
       <div class="detallesTecnologias">
@@ -63,7 +63,9 @@ const posicionDetalles = (event) => {
 };
 
 const abrirLink = () => {
+  if(pantallaX > 800){
     window.open(props.link);
+  }
 };
 
 </script>
@@ -81,6 +83,7 @@ const abrirLink = () => {
   gap: 20px;
   transition: all 1s;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .tituloProyecto,
@@ -175,6 +178,9 @@ const abrirLink = () => {
     flex-direction: column;
     align-items: center;
     gap: 20px;
+  }
+  .proyectoCard{
+    cursor: default;
   }
 
 
