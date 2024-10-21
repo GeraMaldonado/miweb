@@ -2,7 +2,7 @@
   <body>
     <Home/>
     <footer>
-      <p>&copy Gerardo Maldonado. Derechos resesrvados</p>
+      <p>Desarrollado por Gerardo Maldonado Félix</p><p>Full Stack Developer.</p>
     </footer>
   </body>
 </template>
@@ -25,11 +25,11 @@ footer{
   height: 10vh;
   width: 100vw;
   background-color: black;
-  color: red;
-  text-align: left;
-  bottom: 0;  
+  color:aliceblue;
+  text-align: center;
+  bottom: 0;
+  padding-top: 40px;  
 }
-
 h1, h2, h3, h4 {
   text-wrap: balance;
 }
