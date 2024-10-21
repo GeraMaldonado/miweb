@@ -4,14 +4,15 @@
       <div class=contenedorOscuro>
         <div class=contenedorContenido>
           <h3 class=nombre>Gerardo Maldonado Félix</h3>
-          <p class=descripcion>Soy un estudiante de <span class=destacador>programación web</span> con enfoque en el desarrollo <span class=destacador>backend</span>. Actualmente estoy adquiriendo habilidades técnicas sólidas y buscando oportunidades para aplicar mis conocimientos en entornos profesionales. Mi objetivo es crecer como profesional en el campo de la programación.</p>
+            <p class=descripcion>Programador web FullStack</p>
+            <p class=descripcion><span :class="claseDestacador">{{ textoMostrado }}</span><span class=cursor>|</span></p>
         </div>
       </div>
     </div>
   </div>
 </template>
 
-<style scope>
+<style scoped>
 .contenedorContenido{
   height: 100%;
   width: 100%;
@@ -38,4 +39,73 @@
     font-size: var(--altura-nombre);
   }
 
+.cursor {
+    font-weight: bold;
+    animation: parpadeo 0.8s infinite;
+  }
+
+@keyframes parpadeo {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 </style>
+
+<script setup>
+import { ref, onMounted, onBeforeUnmount } from 'vue';
+
+const habilidades = [
+  { texto: "Backend", clase: "destacador1" },
+  { texto: "Frontend", clase: "destacador2" },
+  { texto: "Bases de datos", clase: "destacador3" },
+  { texto: "Despliegue", clase: "destacador4" }];
+
+const textoMostrado = ref('');
+const claseDestacador = ref('');
+const indexHabilidad = ref(0);
+const indexLetra = ref(0);
+const escribiendo = ref(true);
+let intervalo;
+
+const empezarAnimacion = () => {
+  intervalo = setInterval(animacionEsribir, 80);
+};
+
+const animacionEsribir = () => {
+  const habilidadActual = habilidades[indexHabilidad.value].texto;
+  claseDestacador.value = habilidades[indexHabilidad.value].clase;
+  
+  if (escribiendo.value) {
+    if (indexLetra.value < habilidadActual.length) {
+      textoMostrado.value += habilidadActual[indexLetra.value];
+      indexLetra.value++;
+    } else {
+      setTimeout(() => {
+        escribiendo.value = false;
+      }, 1000);
+    }
+  } else {
+    if (indexLetra.value > 0) {
+      textoMostrado.value = textoMostrado.value.slice(0, -1);
+      indexLetra.value--;
+    } else {
+      escribiendo.value = true;
+      indexHabilidad.value = (indexHabilidad.value + 1) % habilidades.length;
+    }
+  }
+};
+
+onMounted(() => {
+  empezarAnimacion();
+});
+
+onBeforeUnmount(() => {
+  clearInterval(intervalo);
+});
+</script>
