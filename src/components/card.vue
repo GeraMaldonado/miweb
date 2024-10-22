@@ -30,15 +30,17 @@
           class="iconoTecnologia" 
         />
       </div>
-      <div class="detallesDescripcion">
-        {{ detalles }}
-      </div>
+      <div class="detallesDescripcion" v-html="procesarSaltos(detalles)"></div>
     </div>
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue';
+
+const procesarSaltos = (texto) => {
+  return texto.replace(/\n/g, '<br>');
+};
 
 const props = defineProps({
   titulo: String,
@@ -182,7 +184,6 @@ const abrirLink = () => {
   .proyectoCard{
     cursor: default;
   }
-
 
   .detallesTitulo, .detallesTecnologias{
     display: none;
