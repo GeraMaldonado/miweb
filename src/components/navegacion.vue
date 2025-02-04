@@ -7,7 +7,8 @@
       <li><a href="#proyectos" :style="{ color: colorValue3 }">Proyectos</a></li>
       <li><a href="#contacto" :style="{ color: colorValue4 }">Contacto</a></li>
     </ul>
-    <a class="curriculum" v-show="menuVisible || !isMobile" href="/Curriculum.pdf" download="Curriculum.pdf">Curriculum</a>
+    <a class="curriculum" v-show="menuVisible || !isMobile" href="/Curriculum.pdf" target="_blank" 
+    rel="noopener noreferrer">Curriculum</a>
   </nav>
 </template>
 <script setup>
