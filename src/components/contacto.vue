@@ -40,17 +40,16 @@
 </template>
 
 <script setup>
-import { onMounted, reactive } from 'vue';
+import { reactive } from 'vue';
 import emailjs from 'emailjs-com';
+import { useToast } from 'vue-toastification';
+
+const toast = useToast();
 
 const form = reactive({
   nombre: '',
   email: '',
   mensaje: ''
-});
-
-onMounted(() => {
-  emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
 });
 
 const sendEmail = () => {
@@ -67,17 +66,19 @@ const sendEmail = () => {
     templateParams,
     import.meta.env.VITE_EMAILJS_PUBLIC_KEY
   )
-    .then(response => {
-      console.log('Correo enviado correctamente:', response);
-      alert('Correo enviado con éxito.');
-      form.nombre = '';
-      form.email = '';
-      form.mensaje = '';
-    })
-    .catch(error => {
-      console.log('Error al enviar el correo:', error);
-      alert('Hubo un problema al enviar el correo.');
+  .then(() => {
+    toast.success('Correo enviado con éxito', {
+      position: "top-right"
     });
+    form.nombre = '';
+    form.email = '';
+    form.mensaje = '';
+  })
+  .catch(() => {
+    toast.error('Hubo un problema al enviar el correo', {
+      position: "top-right"
+    });
+  });
 };
 </script>
 
