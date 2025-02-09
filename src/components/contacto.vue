@@ -40,9 +40,8 @@
 </template>
 
 <script setup>
+import { onMounted, reactive } from 'vue';
 import emailjs from 'emailjs-com';
-import { reactive } from 'vue';
-
 
 const form = reactive({
   nombre: '',
@@ -50,9 +49,9 @@ const form = reactive({
   mensaje: ''
 });
 
-
-emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
-
+onMounted(() => {
+  emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
+});
 
 const sendEmail = () => {
   const templateParams = {
@@ -62,23 +61,25 @@ const sendEmail = () => {
     message: form.mensaje
   };
 
-  emailjs.send(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_TEMPLATE_ID, templateParams)
+  emailjs.send(
+    import.meta.env.VITE_EMAILJS_SERVICE_ID, 
+    import.meta.env.VITE_EMAILJS_TEMPLATE_ID, 
+    templateParams,
+    import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+  )
     .then(response => {
-      console.log('Si estas leyendo esto, muchas gracias por tomarte el tiempo y mandarme un mensaje, ya sea de apoyo, una observacion, una correcion, una critica, muchas gracias :\')');
+      console.log('Correo enviado correctamente:', response);
       alert('Correo enviado con éxito.');
-      
       form.nombre = '';
       form.email = '';
       form.mensaje = '';
-
     })
     .catch(error => {
-      console.log('FAILED...', error);
+      console.log('Error al enviar el correo:', error);
       alert('Hubo un problema al enviar el correo.');
     });
 };
 </script>
-
 
 <style>
 .logoContacto {
