@@ -18,10 +18,10 @@ jobs:
           mkdir -p ~/.ssh
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
-          ssh-keyscan -H 40.233.27.74 >> ~/.ssh/known_hosts
+          ssh-keyscan -H ${{ secrets.SERVER_HOST }} >> ~/.ssh/known_hosts
 
       - name: Build project
         run: npm install && npm run build
 
       - name: Deploy via SCP
-        run: scp -r dist/* ubuntu@40.233.27.74:miweb/dist/
+        run: scp -r dist/* ${{ secrets.SERVER_ROUTE }}
