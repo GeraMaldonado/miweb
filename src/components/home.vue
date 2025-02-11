@@ -3,7 +3,7 @@
     <div class=contenedorElementos>
       <div class=contenedorOscuro>
         <div class=contenedorContenido>
-          <h3 class=nombre>Gera Maldonado</h3>
+          <h3 class=nombre>Gerardo Maldonado Félix</h3>
           <p class=descripcion>Programador web FullStack</p>
           <p class=descripcion><span :class="claseDestacador">{{ textoMostrado }}</span><span class="cursor">|</span></p>
         </div>
