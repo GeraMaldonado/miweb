@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host",
-    "build": "vite build && scp -r dist/* ubuntu@40.233.27.74:miweb/dist/",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
