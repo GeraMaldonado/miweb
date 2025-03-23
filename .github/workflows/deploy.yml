@@ -26,7 +26,7 @@ jobs:
           chmod 600 ~/.ssh/id_rsa || { echo '❌ Falló chmod 600'; exit 1; }
           echo "✅ Permisos asignados"
 
-          ssh-keyscan -H 40.233.24.40 >> ~/.ssh/known_hosts || { echo '❌ Falló ssh-keyscan'; exit 1; }
+          ssh-keyscan -H 40.233.24.100 >> ~/.ssh/known_hosts || { echo '❌ Falló ssh-keyscan'; exit 1; }
           echo "✅ ssh-keyscan completado"
           
           ls -l ~/.ssh
