@@ -13,24 +13,15 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set up SSH key (debugging)
+      - name: Set up SSH key
         run: |
           set -e
-          mkdir -p ~/.ssh
-          echo "🛠 Carpeta .ssh creada"
-          
-          printf "%b" "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa || { echo '❌ Falló printf'; exit 1; }
-          echo "✅ Llave escrita"
-
-          chmod 700 ~/.ssh || { echo '❌ Falló chmod 700'; exit 1; }
-          chmod 600 ~/.ssh/id_rsa || { echo '❌ Falló chmod 600'; exit 1; }
-          echo "✅ Permisos asignados"
-
-          ssh-keyscan -H 40.233.24.100 >> ~/.ssh/known_hosts || { echo '❌ Falló ssh-keyscan'; exit 1; }
-          echo "✅ ssh-keyscan completado"
-          
+          mkdir -p ~/.ssh          
+          printf "%b" "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 700 ~/.ssh
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H 40.233.24.100 >> ~/.ssh/known_hosts          
           ls -l ~/.ssh
-          echo "📄 Contenido de id_rsa:"
           head -n 5 ~/.ssh/id_rsa
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
