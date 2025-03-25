@@ -9,8 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@fontsource/roboto": "^5.1.0",
-    "emailjs-com": "^3.2.0",
     "swiper": "^11.1.14",
     "vue": "^3.4.29",
     "vue-toastification": "^2.0.0-rc.5"
