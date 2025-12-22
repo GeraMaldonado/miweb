@@ -8,12 +8,10 @@
     "build": "vite build",
     "preview": "vite preview"
   },
-  "dependencies": {
-    "@emailjs/browser": "^4.4.1",
-    "@fontsource/roboto": "^5.1.0",
-    "swiper": "^11.1.14",
-    "vue": "^3.4.29",
-    "vue-toastification": "^2.0.0-rc.5"
+    "dependencies": {
+    "next": "16.1.1",
+    "react": "19.2.3",
+    "react-dom": "19.2.3"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.5",
