@@ -1,28 +1,28 @@
 export type ProjectLink = {
-  label: "Código" | "Demo";
-  href: string;
-};
+  label: "Código" | "Demo"
+  href: string
+}
 
 export type Project = {
-  slug: string;
-  title: string;
-  summary: string;          // 1–2 líneas
-  technologies: string[];   // rutas a íconos en /public/habilidades
-  image: string;            // /proyectos/xxx.jpg
-  gif?: string;             // /proyectos/xxx.gif
-  architecture?: string;    // "MVC", "MVVM", etc.
-  links?: ProjectLink[];
-  featured?: boolean;       // por si luego quieres filtrar destacados
-};
+  slug: string
+  title: string
+  summary: string          
+  technologies: string[]   
+  image: string            
+  gif?: string             
+  architecture?: string    
+  links?: ProjectLink[]
+  featured?: boolean       
+}
 
 export const projects: Project[] = [
   {
     slug: "cecodic",
     title: "CECODIC",
     summary: "Plataforma de eventos para la institución CECODIC.",
-    technologies: ["/habilidades/vue.png", "/habilidades/mysql.png", "/habilidades/node.png", "/habilidades/express.png"],
-    image: "/proyectos/cecodic.jpeg",
-    gif: "/proyectos/cecodic.gif",
+    technologies: ["/skills/vue.png", "/skills/mysql.png", "/skills/node.png", "/skills/express.png"],
+    image: "/projects/cecodic.jpeg",
+    gif: "/projects/cecodic.gif",
     architecture: "MVC",
     links: [{ label: "Código", href: "https://github.com/GeraMaldonado/cecodic" }],
     featured: true,
@@ -31,9 +31,9 @@ export const projects: Project[] = [
     slug: "foro-hub",
     title: "Foro-Hub",
     summary: "Proyecto tipo foro con CRUD de tópicos y gestión de usuarios.",
-    technologies: ["/habilidades/java.png", "/habilidades/spring.svg", "/habilidades/mysql.png"],
-    image: "/proyectos/Foro-Hub.jpg",
-    gif: "/proyectos/Foro-Hub.gif",
+    technologies: ["/skills/java.png", "/skills/spring.svg", "/skills/mysql.png"],
+    image: "/projects/Foro-Hub.jpg",
+    gif: "/projects/Foro-Hub.gif",
     architecture: "MVC",
     links: [{ label: "Código", href: "https://github.com/GeraMaldonado/foro-hub" }],
     featured: true,
@@ -42,9 +42,9 @@ export const projects: Project[] = [
     slug: "api-libros",
     title: "API-Libros",
     summary: "API para gestionar libros y autores, con consultas por consola.",
-    technologies: ["/habilidades/java.png", "/habilidades/spring.svg", "/habilidades/postgres.png"],
-    image: "/proyectos/API-Libros.jpg",
-    gif: "/proyectos/API-Libros.gif",
+    technologies: ["/skills/java.png", "/skills/spring.svg", "/skills/postgres.png"],
+    image: "/projects/API-Libros.jpg",
+    gif: "/projects/API-Libros.gif",
     architecture: "MVC",
     links: [{ label: "Código", href: "https://github.com/GeraMaldonado/api-libros" }],
     featured: true,
@@ -53,9 +53,9 @@ export const projects: Project[] = [
     slug: "calculadora-imc",
     title: "Calculadora-IMC",
     summary: "App para gestionar usuarios y cálculos de IMC, %GC y peso ideal.",
-    technologies: ["/habilidades/csharp.png", "/habilidades/maui.svg", "/habilidades/sqlite.svg"],
-    image: "/proyectos/Calculadora-IMC.jpg",
-    gif: "/proyectos/Calculadora-IMC.gif",
+    technologies: ["/skills/csharp.png", "/skills/maui.svg", "/skills/sqlite.svg"],
+    image: "/projects/Calculadora-IMC.jpg",
+    gif: "/projects/Calculadora-IMC.gif",
     architecture: "MVVM",
     featured: true,
   },
@@ -63,12 +63,12 @@ export const projects: Project[] = [
     slug: "blog",
     title: "Blog",
     summary: "Blog personal en Vue.js (sin backend por el momento).",
-    technologies: ["/habilidades/vue.png"],
-    image: "/proyectos/Blog.jpg",
-    gif: "/proyectos/Blog.gif",
+    technologies: ["/skills/vue.png"],
+    image: "/projects/Blog.jpg",
+    gif: "/projects/Blog.gif",
     architecture: "Component-Based",
     links: [{ label: "Código", href: "https://github.com/GeraMaldonado/myBlog" }],
     featured: false,
   },
-];
+]
 
