@@ -1,0 +1,121 @@
+.pCard {
+  position: relative;
+}
+
+.pCard__tile {
+  height: 220px;
+  width: 100%;
+  border: 0;
+  border-radius: 18px;
+  background-color: #d7d7d7;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  padding: 0;
+}
+
+.pCard__tile:disabled {
+  cursor: default;
+  opacity: 0.95;
+}
+
+.pCard__title,
+.pCard__tech {
+  background: rgba(10, 10, 10, 0.55);
+  width: 100%;
+  text-align: center;
+  color: #d7d7d7;
+}
+
+.pCard__title {
+  padding: 10px 12px;
+  font-weight: 900;
+}
+
+.pCard__tech {
+  margin-top: auto;
+  padding: 10px 12px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.pCard__icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  padding: 6px;
+  background: #d7d7d7;
+}
+
+.pCard__details {
+  position: fixed;
+  display: none;
+  width: 260px;
+  height: auto;
+  max-height: 360px;
+  border-radius: 16px;
+  padding: 14px;
+  background: rgba(10, 10, 10, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  z-index: 20;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.pCard__detailsTitle {
+  font-weight: 900;
+  margin-bottom: 8px;
+  color: #d7d7d7;
+}
+
+.pCard__detailsTech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.pCard__detailsText {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 10px;
+  color: #d7d7d7;
+}
+
+.pCard__summary {
+  margin: 0 0 8px;
+  line-height: 1.5;
+}
+
+.pCard__meta {
+  margin: 0 0 8px;
+  opacity: 0.95;
+}
+
+.pCard__links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.pCard__links a {
+  color: #8280f0;
+  text-decoration: none;
+  font-weight: 900;
+}
+
+/* Tooltip estilo Vue: solo desktop, y aparece al hover */
+@media (min-width: 900px) {
+  .pCard:hover .pCard__details {
+    display: block;
+    top: 90px;
+    left: 24px;
+  }
+}
+
