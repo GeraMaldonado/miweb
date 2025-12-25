@@ -1,0 +1,145 @@
+.contact {
+  padding: 80px 16px;
+}
+
+.contact__inner {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.contact__header {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.contact__title {
+  margin: 0;
+  font-weight: 900;
+  line-height: 1.2;
+  font-size: clamp(26px, 3vw, 40px);
+}
+
+.contact__subtitle {
+  margin: 10px auto 0;
+  max-width: 60ch;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.contact__grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+  align-items: start;
+}
+
+.contact__left {
+  border-radius: 16px;
+  padding: 18px 16px;
+  background: rgba(10, 10, 10, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.contact__email {
+  display: grid;
+  gap: 4px;
+  margin-bottom: 14px;
+}
+
+.contact__muted {
+  opacity: 0.75;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.contact__emailLink {
+  text-decoration: none;
+  font-weight: 900;
+  color: #d7d7d7;
+}
+
+.contact__social {
+  display: flex;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.contact__socialBtn {
+  height: 60px;
+  width: 60px;
+  background: #ffffff;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+}
+
+.contact__socialIcon {
+  width: 44px;
+  height: 44px;
+}
+
+.contact__form {
+  border-radius: 16px;
+  padding: 18px 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: grid;
+  gap: 10px;
+}
+
+.contact__form input,
+.contact__form textarea {
+  width: 100%;
+  border-radius: 12px;
+  font-size: 16px;
+  border: none;
+  padding: 10px 12px;
+  background: #d7d7d7;
+  color: #0a0a0a;
+  outline: none;
+}
+
+.contact__form textarea {
+  resize: none;
+}
+
+.contact__form button {
+  border: none;
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-weight: 900;
+  cursor: pointer;
+  background: #8280f0;
+  color: #0a0a0a;
+}
+
+.contact__form button:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+
+.contact__status {
+  margin: 4px 0 0;
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.contact__status.is-success { color: #7ee787; }
+.contact__status.is-error { color: #ff7b72; }
+.contact__status.is-sending { color: #ffd479; }
+
+.contact__footer {
+  margin-top: 28px;
+  text-align: center;
+  opacity: 0.75;
+  font-size: 13px;
+}
+
+@media (min-width: 860px) {
+  .contact__grid {
+    grid-template-columns: 0.9fr 1.1fr;
+  }
+}
+
