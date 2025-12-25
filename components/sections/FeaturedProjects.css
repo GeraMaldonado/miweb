@@ -1,0 +1,41 @@
+.featured {
+  padding: 80px 16px;
+}
+
+.featured__inner {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.featured__header {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.featured__title {
+  margin: 0;
+  font-weight: 900;
+  line-height: 1.2;
+  font-size: clamp(26px, 3vw, 40px);
+}
+
+.featured__subtitle {
+  margin: 10px auto 0;
+  max-width: 60ch;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.featured__grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 820px) {
+  .featured__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
