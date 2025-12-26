@@ -3,11 +3,10 @@ import "./TechStack.css"
 
 export default function TechStack() {
   return (
-    <section id="skills" className="skills">
-      <div className="skills__inner">
-        <header className="skills__header">
-          <h2 className="skills__title">Tecnologías</h2>
-          <p className="skills__subtitle">Herramientas y tecnologías con las que trabajo.</p>
+    <section id="skills" className="u-section skills">
+      <div className="u-container">
+        <header className="w-header">
+          <h2>Tecnologías</h2>
         </header>
 
         <div className="skills__content">
@@ -18,7 +17,7 @@ export default function TechStack() {
             aria-hidden="true"
           />
 
-          <div className="skills__panel">
+          <div className="u-panel skills__panel">
             {skillGroups.map((group) => (
               <div key={group.title} className="skills__group">
                 <h3 className="skills__groupTitle">{group.title}</h3>
