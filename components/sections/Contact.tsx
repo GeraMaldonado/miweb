@@ -63,17 +63,14 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" className="contact">
-      <div className="contact__inner">
-        <header className="contact__header">
-          <h2 className="contact__title">Contacto</h2>
-          <p className="contact__subtitle">
-            Si tienes un proyecto en mente o quieres conectar, escríbeme por aquí.
-          </p>
+    <section id="contact" className="u-section">
+      <div className="u-container">
+        <header className="u-header">
+          <h2>Contacto</h2>
         </header>
 
         <div className="contact__grid">
-          <div className="contact__left">
+          <div className="u-panel contact__left">
             {contactInfo.email ? (
               <div className="contact__email">
                 <span className="contact__muted">Email</span>
@@ -100,7 +97,7 @@ export default function Contact() {
             </div>
           </div>
 
-          <form className="contact__form" onSubmit={sendEmail}>
+          <form className="u-panel-soft contact__form" onSubmit={sendEmail}>
             <input
               type="text"
               value={form.nombre}
@@ -136,7 +133,7 @@ export default function Contact() {
         </div>
 
         <footer className="contact__footer">
-          © {new Date().getFullYear()}
+          GeraMaldonado© {new Date().getFullYear()}
         </footer>
       </div>
     </section>
