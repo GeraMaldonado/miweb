@@ -9,16 +9,13 @@ function statusTone(progress: number) {
 
 export default function InProgressProjects() {
   return (
-    <section id="in-progress" className="inprog">
-      <div className="inprog__inner">
-        <header className="inprog__header">
-          <h2 className="inprog__title">Proyectos en desarrollo</h2>
-          <p className="inprog__subtitle">
-            Proyectos activos con avance y estado.
-          </p>
+    <section id="in-progress" className="u-section inprog">
+      <div className="u-container">
+        <header className="u-header">
+          <h2>Proyectos en desarrollo</h2>
         </header>
 
-        <div className="inprog__grid">
+        <div className="u-grid u-grid-2 inprog__grid">
           {inProgressProjects.map((p) => (
             <article key={p.slug} className="inprog__card">
               <div className="inprog__top">
@@ -53,4 +50,3 @@ export default function InProgressProjects() {
     </section>
   )
 }
-
