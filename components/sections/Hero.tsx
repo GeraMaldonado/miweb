@@ -60,7 +60,7 @@ export default function Hero() {
 
   return (
     <section id="hero" className="hero">
-      <div className="hero__inner">
+      <div className="u-container">
         <div className="hero__panel">
           <h1 className="hero__name">Gerardo Maldonado Félix</h1>
           <p className="hero__role">Programador web FullStack</p>
