@@ -13,7 +13,7 @@ export default function Navigation() {
     () => [
       { id: "about", label: "Sobre mí" },
       { id: "skills", label: "Tecnologías" },
-      { id: "featured", label: "Destacados" },
+      { id: "featured", label: "Proyectos" },
       { id: "in-progress", label: "En progreso" },
       { id: "contact", label: "Contacto" },
     ],
@@ -59,7 +59,7 @@ export default function Navigation() {
     <header className="nav">
       <div className="nav__inner">
         <a className="nav__brand" href="#hero" onClick={onNavClick} aria-label="Ir al inicio">
-          Dev
+          &lt;<span className="simbolo">Dev </span>/&gt;
         </a>
 
         <nav className="nav__links" aria-label="Navegación principal">
