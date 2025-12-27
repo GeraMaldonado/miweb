@@ -59,7 +59,7 @@ export default function Navigation() {
     <header className="nav">
       <div className="nav__inner">
         <a className="nav__brand" href="#hero" onClick={onNavClick} aria-label="Ir al inicio">
-          &lt;<span className="simbolo">Dev </span>/&gt;
+          &lt;<span>Dev </span>/&gt;
         </a>
 
         <nav className="nav__links" aria-label="Navegación principal">
@@ -85,7 +85,6 @@ export default function Navigation() {
         </button>
       </div>
 
-      {/* Menú móvil */}
       <div className={`nav__mobile ${open ? "is-open" : ""}`} role="dialog" aria-label="Menú móvil">
         <div className="nav__mobileInner">
           {items.map((item) => (
