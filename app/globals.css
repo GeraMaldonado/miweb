@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 :root {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -5,21 +7,6 @@
   --gutter: 16px;
   --nav-h: 56px;
   --scroll-offset: 72px;
-  --s1: 8px;
-  --s2: 10px;
-  --s3: 12px;
-  --s4: 14px;
-  --s5: 16px;
-  --s6: 18px;
-  --s7: 22px;
-  --s8: 28px;
-  --s9: 32px;
-  --s10: 80px;
-  --r1: 8px;
-  --r2: 10px;
-  --r3: 12px;
-  --r4: 16px;
-  --r5: 18px;
   --background: #0a0a0a;
   --foreground: #ededed;
   --surface-1: rgba(10, 10, 10, 0.45);
@@ -33,10 +20,6 @@
   --mid: #ffd479;
   --bad: #ff7b72;
   --focus: rgba(130, 128, 240, 0.8);
-
-  --text-sm: 0.875rem;
-  --text-xl: 1.25rem;
-  --text-7x1: 4.5rem;
 }
 
 html[data-theme="light"] {
@@ -51,15 +34,17 @@ html[data-theme="light"] {
 }
 
 @media (prefers-color-scheme: light) {
-  :root:not([data-theme]) {
+  html:not([data-theme]) {
     --background: #ffffff;
     --foreground: #171717;
   }
 }
 
-* { box-sizing: border-box; }
-
 html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
 
 body {
   background: var(--background);
@@ -69,26 +54,3 @@ body {
   line-height: 1.65;
   letter-spacing: -0.01em;
 }
-
-main { padding-top: var(--nav-h); }
-
-section { scroll-margin-top: var(--scroll-offset); }
-
-h1 {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 900;
-  letter-spacing: -0.03em;
-  margin: 0;
-}
-
-h2 {
-  font-size: clamp(1.6rem, 3vw, 2.4rem);
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  margin: 0;
-}
-
-h3 { font-size: 1.2rem; font-weight: 700; margin: 0; }
-
-p { font-size: 1rem; font-weight: 400; margin: 0; }
-
