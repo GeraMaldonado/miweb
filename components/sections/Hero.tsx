@@ -1,17 +1,16 @@
 "use client"
 
 import { useEffect, useMemo, useState } from "react"
-import "./Hero.css"
 
 type SkillWord = { text: string; className: string }
 
 export default function Hero() {
   const skills: SkillWord[] = useMemo(
     () => [
-      { text: "Backend", className: "highlight-1" },
-      { text: "Frontend", className: "highlight-2" },
-      { text: "Bases de datos", className: "highlight-3" },
-      { text: "Despliegue", className: "highlight-4" },
+      { text: "Backend", className: "text-primary" },
+      { text: "Frontend", className: "text-[var(--good)]" },
+      { text: "Bases de datos", className: "text-[var(--mid)]" },
+      { text: "Despliegue", className: "text-[var(--bad)]" },
     ],
     []
   )
@@ -35,7 +34,6 @@ export default function Hero() {
           setShown((prev) => prev + word[charIndex])
           setCharIndex((n) => n + 1)
         } else {
-          
           timeoutId = window.setTimeout(() => setTyping(false), 500)
         }
       } else {
@@ -55,19 +53,26 @@ export default function Hero() {
       if (intervalId) window.clearInterval(intervalId)
       if (timeoutId) window.clearTimeout(timeoutId)
     }
-    
   }, [charIndex, typing, current.text, skills.length])
 
   return (
-    <section id="hero" className="hero">
-      <div className="u-container">
-        <div className="hero__panel">
-          <h1 className="hero__name">Gerardo Maldonado Félix</h1>
-          <p className="hero__role">Programador web FullStack</p>
+    <section
+      id="hero"
+      className="min-h-[90vh] flex items-center justify-center px-[var(--gutter)] pt-24 pb-8 scroll-mt-[var(--scroll-offset)]"
+    >
+      <div className="mx-auto w-full max-w-[var(--container)]">
+        <div className="rounded-xl border border-border bg-card/65 p-7 backdrop-blur-lg">
+          <h1 className="text-center font-black leading-[1.15] [font-size:clamp(28px,4vw,52px)]">
+            Gerardo Maldonado Félix
+          </h1>
 
-          <p className="hero__line">
-            <span className={`hero__highlight ${current.className}`}>{shown}</span>
-            <span className="hero__cursor" aria-hidden="true">
+          <p className="mt-3 text-center font-semibold opacity-90 [font-size:clamp(14px,1.7vw,18px)]">
+            Programador web FullStack
+          </p>
+
+          <p className="mt-3 text-center font-semibold leading-relaxed [font-size:clamp(14px,1.7vw,18px)]">
+            <span className={["font-extrabold", current.className].join(" ")}>{shown}</span>
+            <span className="ml-[2px] inline-block font-black animate-blink" aria-hidden="true">
               |
             </span>
           </p>
@@ -76,4 +81,3 @@ export default function Hero() {
     </section>
   )
 }
-
