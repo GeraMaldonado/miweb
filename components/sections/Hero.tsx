@@ -62,7 +62,7 @@ export default function Hero() {
     >
       <div className="mx-auto w-full max-w-[var(--container)]">
         <div className="rounded-xl border border-border bg-card/65 p-7 backdrop-blur-lg">
-          <h1 className="text-center font-black leading-[1.15] [font-size:clamp(28px,4vw,52px)]">
+          <h1 className="text-center font-black leading-[1.15] text-5xl">
             Gerardo Maldonado Félix
           </h1>
 
