@@ -1,0 +1,304 @@
+{
+    "metadata": {
+        "title": "Gerardo Maldonado | Portfolio",
+        "description": "Portfolio personal de desarrollo web"
+    },
+    "navigation": {
+        "brand": {
+            "prefix": "<",
+            "text": "Dev ",
+            "suffix": "/>"
+        },
+        "items": [
+            {
+                "id": "about",
+                "label": "Sobre mí"
+            },
+            {
+                "id": "skills",
+                "label": "Tecnologías"
+            },
+            {
+                "id": "featured",
+                "label": "Proyectos"
+            },
+            {
+                "id": "in-progress",
+                "label": "En progreso"
+            },
+            {
+                "id": "contact",
+                "label": "Contacto"
+            }
+        ],
+        "mobileMenuLabel": "Menú",
+        "mobileMenuAria": "Menú móvil",
+        "goToHomeAria": "Ir al inicio"
+    },
+    "hero": {
+        "title": "Gerardo Maldonado Félix",
+        "subtitle": "Programador web FullStack",
+        "skills": [
+            {
+                "text": "Backend",
+                "className": "text-primary"
+            },
+            {
+                "text": "Frontend",
+                "className": "text-[var(--good)]"
+            },
+            {
+                "text": "Bases de datos",
+                "className": "text-[var(--mid)]"
+            },
+            {
+                "text": "Despliegue",
+                "className": "text-[var(--bad)]"
+            }
+        ]
+    },
+    "about": {
+        "title": "Sobre mí",
+        "paragraphs": [
+            "Estudiante de Ingeniería en Software con especialización en desarrollo web. Experiencia en TypeScript, Node.js y SQL en backend, con conocimientos en Vue.js.",
+            "Enfoque en optimización de procesos, aprendizaje continuo y resolución de problemas. Habilidad para trabajar en equipo y participar en proyectos desde la toma de requerimientos hasta el despliegue.",
+            "Compromiso con la entrega de soluciones escalables y eficientes, alineadas con las necesidades del negocio. Buscando una oportunidad para aplicar conocimientos en desarrollo backend y frontend, contribuyendo con innovación y crecimiento en entornos dinámicos."
+        ],
+        "cvButton": "Descargar CV",
+        "contactButton": "Contacto",
+        "cards": [
+            {
+                "title": "Optimización de procesos",
+                "description": "Busco mejorar flujo y rendimiento en el desarrollo y en la solución técnica."
+            },
+            {
+                "title": "De requerimientos a despliegue",
+                "description": "Participo en análisis, implementación, pruebas y entrega en entorno real."
+            },
+            {
+                "title": "Escalabilidad y eficiencia",
+                "description": "Prioridad en soluciones mantenibles, claras y alineadas a necesidades del negocio."
+            }
+        ]
+    },
+    "techStack": {
+        "title": "Tecnologías",
+        "groups": [
+            {
+                "title": "Tecnologías",
+                "items": [
+                    {
+                        "name": "Express JS",
+                        "icon": "/skills/express.png"
+                    },
+                    {
+                        "name": "MySQL",
+                        "icon": "/skills/mysql.png"
+                    },
+                    {
+                        "name": "Neovim",
+                        "icon": "/skills/neovim.png"
+                    },
+                    {
+                        "name": "Node.js",
+                        "icon": "/skills/node.png"
+                    },
+                    {
+                        "name": "GNU/Linux Ubuntu",
+                        "icon": "/skills/ubuntu.png"
+                    },
+                    {
+                        "name": "Vue 3",
+                        "icon": "/skills/vue.png"
+                    }
+                ]
+            }
+        ]
+    },
+    "projects": {
+        "title": "Proyectos destacados",
+        "items": [
+            {
+                "slug": "cecodic",
+                "title": "CECODIC",
+                "summary": "Plataforma de eventos para la institución CECODIC.",
+                "technologies": [
+                    "/skills/vue.png",
+                    "/skills/mysql.png",
+                    "/skills/node.png",
+                    "/skills/express.png"
+                ],
+                "image": "/projects/cecodic.jpeg",
+                "gif": "/projects/cecodic.gif",
+                "architecture": "MVC",
+                "links": [
+                    {
+                        "label": "Código",
+                        "href": "https://github.com/GeraMaldonado/cecodic"
+                    }
+                ],
+                "featured": true
+            },
+            {
+                "slug": "foro-hub",
+                "title": "Foro-Hub",
+                "summary": "Proyecto tipo foro con CRUD de tópicos y gestión de usuarios.",
+                "technologies": [
+                    "/skills/java.png",
+                    "/skills/spring.svg",
+                    "/skills/mysql.png"
+                ],
+                "image": "/projects/Foro-Hub.jpg",
+                "gif": "/projects/Foro-Hub.gif",
+                "architecture": "MVC",
+                "links": [
+                    {
+                        "label": "Código",
+                        "href": "https://github.com/GeraMaldonado/foro-hub"
+                    }
+                ],
+                "featured": true
+            },
+            {
+                "slug": "api-libros",
+                "title": "API-Libros",
+                "summary": "API para gestionar libros y autores, con consultas por consola.",
+                "technologies": [
+                    "/skills/java.png",
+                    "/skills/spring.svg",
+                    "/skills/postgres.png"
+                ],
+                "image": "/projects/API-Libros.jpg",
+                "gif": "/projects/API-Libros.gif",
+                "architecture": "MVC",
+                "links": [
+                    {
+                        "label": "Código",
+                        "href": "https://github.com/GeraMaldonado/api-libros"
+                    }
+                ],
+                "featured": true
+            },
+            {
+                "slug": "calculadora-imc",
+                "title": "Calculadora-IMC",
+                "summary": "App para gestionar usuarios y cálculos de IMC, %GC y peso ideal.",
+                "technologies": [
+                    "/skills/csharp.png",
+                    "/skills/maui.svg",
+                    "/skills/sqlite.svg"
+                ],
+                "image": "/projects/Calculadora-IMC.jpg",
+                "gif": "/projects/Calculadora-IMC.gif",
+                "architecture": "MVVM",
+                "featured": true
+            },
+            {
+                "slug": "blog",
+                "title": "Blog",
+                "summary": "Blog personal en Vue.js (sin backend por el momento).",
+                "technologies": [
+                    "/skills/vue.png"
+                ],
+                "image": "/projects/Blog.jpg",
+                "gif": "/projects/Blog.gif",
+                "architecture": "Component-Based",
+                "links": [
+                    {
+                        "label": "Código",
+                        "href": "https://github.com/GeraMaldonado/myBlog"
+                    }
+                ],
+                "featured": false
+            }
+        ]
+    },
+    "inProgress": {
+        "title": "Proyectos en desarrollo",
+        "progressLabel": "Progreso",
+        "items": [
+            {
+                "slug": "ai-chat-assistant",
+                "title": "AI Chat Assistant",
+                "description": "Asistente de chat impulsado por IA con capacidades de procesamiento de lenguaje natural.",
+                "progress": 75,
+                "tags": [
+                    "Next.js",
+                    "OpenAI",
+                    "Supabase"
+                ],
+                "status": "En progreso"
+            },
+            {
+                "slug": "portfolio-cms",
+                "title": "Portfolio CMS",
+                "description": "Sistema de gestión de contenido personalizado para portafolios de desarrolladores.",
+                "progress": 60,
+                "tags": [
+                    "React",
+                    "Node.js",
+                    "MongoDB"
+                ],
+                "status": "En desarrollo"
+            },
+            {
+                "slug": "fitness-tracker",
+                "title": "Fitness Tracker",
+                "description": "Aplicación para seguimiento de ejercicios y nutrición con sincronización en la nube.",
+                "progress": 40,
+                "tags": [
+                    "React Native",
+                    "Firebase",
+                    "Charts"
+                ],
+                "status": "Planificación"
+            },
+            {
+                "slug": "snippet-manager",
+                "title": "Code Snippet Manager",
+                "description": "Herramienta para organizar y compartir fragmentos de código con resaltado de sintaxis.",
+                "progress": 85,
+                "tags": [
+                    "TypeScript",
+                    "PostgreSQL",
+                    "Prism.js"
+                ],
+                "status": "Beta"
+            }
+        ]
+    },
+    "contact": {
+        "title": "Contacto",
+        "info": {
+            "email": "gmaldonadofelix@gmail.com"
+        },
+        "form": {
+            "namePlaceholder": "Nombre",
+            "emailPlaceholder": "Correo",
+            "messagePlaceholder": "Mensaje",
+            "submitButton": "Enviar",
+            "sendingButton": "Enviando...",
+            "successMessage": "Mensaje enviado. Te contacto pronto.",
+            "errorMessage": "Hubo un problema al enviar el mensaje.",
+            "configError": "Faltan variables de EmailJS en .env.local (SERVICE_ID / TEMPLATE_ID)."
+        },
+        "social": [
+            {
+                "label": "GitHub",
+                "href": "https://github.com/GeraMaldonado",
+                "icon": "/contact/github.png"
+            },
+            {
+                "label": "LinkedIn",
+                "href": "https://www.linkedin.com/in/gerardo-maldonado-félix/",
+                "icon": "/contact/linkedin.png"
+            },
+            {
+                "label": "WhatsApp",
+                "href": "https://wa.me/524921244858",
+                "icon": "/contact/whatsapp.png"
+            }
+        ],
+        "footer": "GeraMaldonado© {year}"
+    }
+}
