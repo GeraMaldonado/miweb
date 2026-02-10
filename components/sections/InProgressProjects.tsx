@@ -1,16 +1,14 @@
 import content from "@/data/locales/es.json"
 import { InProgressProject, InProgressStatus } from "@/data/inProgress"
 
-function statusTone(progress: number) {
-  if (progress >= 80) return "good"
-  if (progress >= 50) return "mid"
-  return "low"
-}
-
-function statusClass(tone: "good" | "mid" | "low") {
-  if (tone === "good") return "text-[var(--good)]"
-  if (tone === "mid") return "text-[var(--mid)]"
-  return "text-[var(--bad)]"
+function getStatusColor(status: string) {
+  const map: Record<string, string> = {
+    "Beta": "text-[var(--good)]",
+    "En progreso": "text-[var(--good)]",
+    "En desarrollo": "text-[var(--mid)]",
+    "Planificación": "text-[var(--bad)]",
+  }
+  return map[status] || "text-muted-foreground"
 }
 
 export default function InProgressProjects() {
@@ -26,7 +24,6 @@ export default function InProgressProjects() {
 
         <div className="grid gap-4 md:grid-cols-2">
           {projects.map((p) => {
-            const tone = statusTone(p.progress)
             return (
               <article key={p.slug} className="rounded-xl border border-border bg-muted p-4">
                 <div className="mb-2 flex items-start justify-between gap-2.5">
@@ -35,7 +32,7 @@ export default function InProgressProjects() {
                   <span
                     className={[
                       "whitespace-nowrap rounded-full border border-white/15 bg-black/35 px-2.5 py-1.5 text-[12px] font-black",
-                      statusClass(tone),
+                      getStatusColor(p.status),
                     ].join(" ")}
                   >
                     {p.status}
