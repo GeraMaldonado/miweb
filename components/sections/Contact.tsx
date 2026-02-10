@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import emailjs from "@emailjs/browser"
-import { contactInfo, socialLinks } from "@/data/contact"
+import content from "@/data/locales/es.json"
 
 type FormState = {
   nombre: string
@@ -11,6 +11,8 @@ type FormState = {
 }
 
 export default function Contact() {
+  const { title, info, form: formLabels, social, footer } = content.contact
+
   const [form, setForm] = useState<FormState>({
     nombre: "",
     email: "",
@@ -36,7 +38,7 @@ export default function Contact() {
     if (!serviceId || !templateId) {
       setStatus({
         type: "error",
-        message: "Faltan variables de EmailJS en .env.local (SERVICE_ID / TEMPLATE_ID).",
+        message: formLabels.configError,
       })
       return
     }
@@ -52,11 +54,11 @@ export default function Contact() {
 
     try {
       await emailjs.send(serviceId, templateId, templateParams)
-      setStatus({ type: "success", message: "Mensaje enviado. Te contacto pronto." })
+      setStatus({ type: "success", message: formLabels.successMessage })
       setForm({ nombre: "", email: "", mensaje: "" })
     } catch (err) {
       console.error(err)
-      setStatus({ type: "error", message: "Hubo un problema al enviar el mensaje." })
+      setStatus({ type: "error", message: formLabels.errorMessage })
     }
   }
 
@@ -76,29 +78,29 @@ export default function Contact() {
     <section id="contact" className="scroll-mt-[var(--scroll-offset)] py-16">
       <div className="mx-auto max-w-[var(--container)] px-[var(--gutter)]">
         <header className="mb-8">
-          <h2 className="text-3xl font-extrabold tracking-tight">Contacto</h2>
+          <h2 className="text-3xl font-extrabold tracking-tight">{title}</h2>
         </header>
 
         <div className="grid gap-4 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div className="rounded-xl border border-border bg-card p-6">
-            {contactInfo.email ? (
+            {info.email ? (
               <div className="mb-4 grid gap-1">
                 <span className="text-sm font-semibold text-muted-foreground">Email</span>
                 <a
-                  href={`mailto:${contactInfo.email}`}
+                  href={`mailto:${info.email}`}
                   className={[
                     "w-fit text-sm font-black text-muted-foreground hover:text-primary transition-colors",
                     focusRing,
                     "rounded-md",
                   ].join(" ")}
                 >
-                  {contactInfo.email}
+                  {info.email}
                 </a>
               </div>
             ) : null}
 
             <div className="mt-2 flex gap-3">
-              {socialLinks.map((s) => (
+              {social.map((s) => (
                 <a
                   key={s.label}
                   href={s.href}
@@ -124,7 +126,7 @@ export default function Contact() {
                 type="text"
                 value={form.nombre}
                 onChange={(e) => setForm((p) => ({ ...p, nombre: e.target.value }))}
-                placeholder="Nombre"
+                placeholder={formLabels.namePlaceholder}
                 required
                 className={[
                   "w-full rounded-lg bg-[var(--input-bg)] px-3 py-2 text-base text-[var(--input-fg)]",
@@ -137,7 +139,7 @@ export default function Contact() {
                 type="email"
                 value={form.email}
                 onChange={(e) => setForm((p) => ({ ...p, email: e.target.value }))}
-                placeholder="Correo"
+                placeholder={formLabels.emailPlaceholder}
                 required
                 className={[
                   "w-full rounded-lg bg-[var(--input-bg)] px-3 py-2 text-base text-[var(--input-fg)]",
@@ -149,7 +151,7 @@ export default function Contact() {
               <textarea
                 value={form.mensaje}
                 onChange={(e) => setForm((p) => ({ ...p, mensaje: e.target.value }))}
-                placeholder="Mensaje"
+                placeholder={formLabels.messagePlaceholder}
                 required
                 rows={6}
                 className={[
@@ -169,7 +171,7 @@ export default function Contact() {
                   "focus-visible:outline focus-visible:outline-2 focus-visible:outline-[var(--focus)] focus-visible:outline-offset-[2px]",
                 ].join(" ")}
               >
-                {status.type === "sending" ? "Enviando..." : "Enviar"}
+                {status.type === "sending" ? formLabels.sendingButton : formLabels.submitButton}
               </button>
 
               {status.type !== "idle" && status.message ? (
@@ -180,7 +182,7 @@ export default function Contact() {
         </div>
 
         <footer className="mt-7 text-center text-[13px] opacity-75">
-          GeraMaldonado© {new Date().getFullYear()}
+          {footer.replace("{year}", new Date().getFullYear().toString())}
         </footer>
       </div>
     </section>

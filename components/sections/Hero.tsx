@@ -1,18 +1,16 @@
 "use client"
 
 import { useEffect, useMemo, useState } from "react"
+import content from "@/data/locales/es.json"
 
 type SkillWord = { text: string; className: string }
 
 export default function Hero() {
-  const skills: SkillWord[] = useMemo(
-    () => [
-      { text: "Backend", className: "text-primary" },
-      { text: "Frontend", className: "text-[var(--good)]" },
-      { text: "Bases de datos", className: "text-[var(--mid)]" },
-      { text: "Despliegue", className: "text-[var(--bad)]" },
-    ],
-    []
+  const { title, subtitle, skills } = content.hero
+
+  const skillList: SkillWord[] = useMemo(
+    () => skills,
+    [skills]
   )
 
   const [shown, setShown] = useState("")
@@ -20,7 +18,7 @@ export default function Hero() {
   const [charIndex, setCharIndex] = useState(0)
   const [typing, setTyping] = useState(true)
 
-  const current = skills[skillIndex]
+  const current = skillList[skillIndex]
 
   useEffect(() => {
     let intervalId: number | undefined
@@ -41,7 +39,7 @@ export default function Hero() {
           setShown((prev) => prev.slice(0, -1))
           setCharIndex((n) => n - 1)
         } else {
-          setSkillIndex((i) => (i + 1) % skills.length)
+          setSkillIndex((i) => (i + 1) % skillList.length)
           setTyping(true)
         }
       }
@@ -53,7 +51,7 @@ export default function Hero() {
       if (intervalId) window.clearInterval(intervalId)
       if (timeoutId) window.clearTimeout(timeoutId)
     }
-  }, [charIndex, typing, current.text, skills.length])
+  }, [charIndex, typing, current.text, skillList.length])
 
   return (
     <section
@@ -63,11 +61,11 @@ export default function Hero() {
       <div className="mx-auto w-full max-w-[var(--container)]">
         <div className="rounded-xl border border-border bg-card/65 p-7 backdrop-blur-lg">
           <h1 className="text-center font-black leading-[1.15] text-5xl">
-            Gerardo Maldonado Félix
+            {title}
           </h1>
 
           <p className="mt-3 text-center font-semibold opacity-90 [font-size:clamp(14px,1.7vw,18px)]">
-            Programador web FullStack
+            {subtitle}
           </p>
 
           <p className="mt-3 text-center font-semibold leading-relaxed [font-size:clamp(14px,1.7vw,18px)]">

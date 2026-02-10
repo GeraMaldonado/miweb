@@ -1,4 +1,5 @@
-import { inProgressProjects } from "@/data/inProgress"
+import content from "@/data/locales/es.json"
+import { InProgressProject, InProgressStatus } from "@/data/inProgress"
 
 function statusTone(progress: number) {
   if (progress >= 80) return "good"
@@ -13,15 +14,18 @@ function statusClass(tone: "good" | "mid" | "low") {
 }
 
 export default function InProgressProjects() {
+  const { title, progressLabel, items } = content.inProgress
+  const projects = items as unknown as InProgressProject[]
+
   return (
     <section id="in-progress" className="scroll-mt-[var(--scroll-offset)] py-16">
       <div className="mx-auto max-w-[var(--container)] px-[var(--gutter)]">
         <header className="mb-8">
-          <h2 className="text-3xl font-extrabold tracking-tight">Proyectos en desarrollo</h2>
+          <h2 className="text-3xl font-extrabold tracking-tight">{title}</h2>
         </header>
 
         <div className="grid gap-4 md:grid-cols-2">
-          {inProgressProjects.map((p) => {
+          {projects.map((p) => {
             const tone = statusTone(p.progress)
             return (
               <article key={p.slug} className="rounded-xl border border-border bg-muted p-4">
@@ -53,13 +57,13 @@ export default function InProgressProjects() {
 
                 <div>
                   <div className="mb-2 flex items-center justify-between">
-                    <span className="text-sm opacity-80">Progreso</span>
+                    <span className="text-sm opacity-80">{progressLabel}</span>
                     <span className="text-sm font-black">{p.progress}%</span>
                   </div>
 
                   <div
                     className="h-2 w-full overflow-hidden rounded-full bg-white/10"
-                    aria-label={`Progreso ${p.progress}%`}
+                    aria-label={`${progressLabel} ${p.progress}%`}
                   >
                     <div className="h-full rounded-full bg-primary" style={{ width: `${p.progress}%` }} />
                   </div>

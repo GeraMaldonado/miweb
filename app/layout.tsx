@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 import Navigation from "@/components/layout/Navigation"
 import "./globals.css"
+import content from "@/data/locales/es.json"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,8 +15,8 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Gerardo Maldonado | Portfolio",
-  description: "Portfolio personal de desarrollo web",
+  title: content.metadata.title,
+  description: content.metadata.description,
 }
 
 export default function RootLayout({

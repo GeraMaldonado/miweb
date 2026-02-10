@@ -1,11 +1,16 @@
-import { skillGroups } from "@/data/skills"
+import content from "@/data/locales/es.json"
+import { SkillGroup } from "@/data/skills"
 
 export default function TechStack() {
+  const { title, groups } = content.techStack
+  // Cast to ensure compatibility if needed, or rely on inference
+  const skillGroups = groups as SkillGroup[]
+
   return (
     <section id="skills" className="scroll-mt-[var(--scroll-offset)] py-16">
       <div className="mx-auto max-w-[var(--container)] px-[var(--gutter)]">
         <header className="mb-8">
-          <h2 className="text-3xl font-extrabold tracking-tight">Tecnologías</h2>
+          <h2 className="text-3xl font-extrabold tracking-tight">{title}</h2>
         </header>
 
         <div className="flex w-full min-w-[315px] items-center justify-between gap-[18px]">
