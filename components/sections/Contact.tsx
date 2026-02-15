@@ -114,7 +114,10 @@ export default function Contact() {
                     "transition-transform hover:scale-[1.03]",
                   ].join(" ")}
                 >
-                  <img className="h-[44px] w-[44px]" src={s.icon} alt={s.label} />
+                  <svg className="h-[44px] w-[44px]">
+                    <use href={`/sprites.svg#${s.icon}`} />
+                  </svg>
+
                 </a>
               ))}
             </div>
