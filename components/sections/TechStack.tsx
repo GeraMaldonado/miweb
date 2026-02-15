@@ -3,7 +3,6 @@ import { SkillGroup } from "@/data/skills"
 
 export default function TechStack() {
   const { title, groups } = content.techStack
-  // Cast to ensure compatibility if needed, or rely on inference
   const skillGroups = groups as SkillGroup[]
 
   return (
@@ -37,7 +36,9 @@ export default function TechStack() {
                         "transition [will-change:filter] hover:[filter:drop-shadow(0_0_2em_rgba(130,128,240,0.87))]",
                       ].join(" ")}
                     >
-                      <img className="h-auto w-[85px]" src={s.icon} alt={s.name} />
+                      <svg className="h-auto w-[85px] text-foreground">
+                        <use href={`/sprites.svg#${s.icon}`} />
+                      </svg>
                     </div>
                   ))}
                 </div>
