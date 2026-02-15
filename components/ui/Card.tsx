@@ -37,14 +37,16 @@ export default function ProjectCard({ project }: { project: Project }) {
         </div>
 
         <div className="mt-auto flex w-full flex-wrap justify-center gap-2.5 bg-black/55 px-3 py-2">
-          {project.technologies.map((icon) => (
-            <img
-              key={icon}
-              src={icon}
-              alt=""
-              className="h-[34px] w-[34px] rounded-[10px] bg-[color:var(--input-bg)] p-[6px]"
-            />
-          ))}
+          {project.technologies.map((icon) => {
+            return (
+              <svg
+                key={icon}
+                className="h-[34px] w-[34px] rounded-[10px] bg-[color:var(--input-bg)] p-[6px] text-foreground"
+              >
+                <use href={`/sprites.svg#${icon}`} />
+              </svg>
+            )
+          })}
         </div>
       </button>
 
@@ -59,14 +61,16 @@ export default function ProjectCard({ project }: { project: Project }) {
         <div className="mb-2 font-black text-[color:var(--muted)]">{project.title}</div>
 
         <div className="mb-2.5 flex flex-wrap gap-2">
-          {project.technologies.map((icon) => (
-            <img
-              key={icon}
-              src={icon}
-              alt=""
-              className="h-[34px] w-[34px] rounded-[10px] bg-[color:var(--input-bg)] p-[6px]"
-            />
-          ))}
+          {project.technologies.map((icon) => {
+            return (
+              <svg
+                key={icon}
+                className="h-[34px] w-[34px] rounded-[10px] bg-[color:var(--input-bg)] p-[6px] text-foreground"
+              >
+                <use href={`/sprites.svg#${icon}`} />
+              </svg>
+            )
+          })}
         </div>
 
         <div className="rounded-xl bg-white/10 p-2.5 text-[color:var(--muted)]">
