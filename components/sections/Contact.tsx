@@ -1,7 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
-import emailjs from "@emailjs/browser"
+import { useState } from "react"
 import content from "@/data/locales/es.json"
 
 type FormState = {
@@ -24,36 +23,39 @@ export default function Contact() {
     message?: string
   }>({ type: "idle" })
 
-  useEffect(() => {
-    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-    if (publicKey) emailjs.init(publicKey)
-  }, [])
-
   const sendEmail = async (e: React.FormEvent) => {
     e.preventDefault()
 
-    const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
-    const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
-
-    if (!serviceId || !templateId) {
-      setStatus({
-        type: "error",
-        message: formLabels.configError,
-      })
-      return
-    }
+    const apiUrl = "http://localhost:3999/send"
+    const apiKey = "super_secret_mail"
 
     setStatus({ type: "sending" })
 
-    const templateParams = {
-      subject: "Mensaje de Portfolio",
-      name: form.nombre,
-      from_name: form.email,
-      message: form.mensaje,
-    }
-
     try {
-      await emailjs.send(serviceId, templateId, templateParams)
+      const res = await fetch(apiUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          ...(apiKey ? { "x-api-key": apiKey } : {}),
+        },
+        body: JSON.stringify({
+          to: info.email,
+          subject: "Mensaje de Portfolio",
+          text: `
+Nombre: ${form.nombre}
+Email: ${form.email}
+
+Mensaje:
+${form.mensaje}
+          `.trim(),
+          source: "Portfolio",
+        }),
+      })
+
+      if (!res.ok) {
+        throw new Error(`Error ${res.status}`)
+      }
+
       setStatus({ type: "success", message: formLabels.successMessage })
       setForm({ nombre: "", email: "", mensaje: "" })
     } catch (err) {
@@ -117,7 +119,6 @@ export default function Contact() {
                   <svg className="h-[44px] w-[44px]">
                     <use href={`/sprites.svg#${s.icon}`} />
                   </svg>
-
                 </a>
               ))}
             </div>
@@ -178,7 +179,9 @@ export default function Contact() {
               </button>
 
               {status.type !== "idle" && status.message ? (
-                <p className={["mt-1 text-sm font-extrabold", statusClass].join(" ")}>{status.message}</p>
+                <p className={["mt-1 text-sm font-extrabold", statusClass].join(" ")}>
+                  {status.message}
+                </p>
               ) : null}
             </div>
           </form>
