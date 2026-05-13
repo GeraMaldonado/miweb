@@ -37,7 +37,7 @@
     },
     "hero": {
         "title": "Gerardo Maldonado Félix",
-        "subtitle": "Programador web FullStack",
+        "subtitle": "Desarrollador web full stack",
         "skills": [
             {
                 "text": "Backend",
@@ -60,9 +60,9 @@
     "about": {
         "title": "Sobre mí",
         "paragraphs": [
-            "Estudiante de Ingeniería en Software con especialización en desarrollo web. Experiencia en TypeScript, Node.js y SQL en backend, con conocimientos en Vue.js.",
-            "Enfoque en optimización de procesos, aprendizaje continuo y resolución de problemas. Habilidad para trabajar en equipo y participar en proyectos desde la toma de requerimientos hasta el despliegue.",
-            "Compromiso con la entrega de soluciones escalables y eficientes, alineadas con las necesidades del negocio. Buscando una oportunidad para aplicar conocimientos en desarrollo backend y frontend, contribuyendo con innovación y crecimiento en entornos dinámicos."
+            "Soy Gerardo Maldonado Félix, estudiante de Ingeniería en Software con enfoque en desarrollo web y gusto por construir soluciones claras, útiles y mantenibles.",
+            "Trabajo principalmente con TypeScript, Node.js, React, Next.js y SQL, moviéndome entre backend, frontend e integración según lo que el proyecto necesite.",
+            "Me interesa resolver problemas reales, optimizar procesos y llevar ideas desde los requerimientos hasta una entrega funcional y bien cuidada."
         ],
         "cvButton": "Descargar CV",
         "contactButton": "Contacto",
@@ -88,6 +88,22 @@
                 "title": "Tecnologías",
                 "items": [
                     {
+                        "name": "TypeScript",
+                        "icon": "typescript"
+                    },
+                    {
+                        "name": "React",
+                        "icon": "react"
+                    },
+                    {
+                        "name": "Next.js",
+                        "icon": "nextdotjs"
+                    },
+                    {
+                        "name": "Node.js",
+                        "icon": "node"
+                    },
+                    {
                         "name": "Express JS",
                         "icon": "express"
                     },
@@ -96,20 +112,20 @@
                         "icon": "mysql"
                     },
                     {
+                        "name": "PostgreSQL",
+                        "icon": "postgresql"
+                    },
+                    {
+                        "name": "Git",
+                        "icon": "git"
+                    },
+                    {
+                        "name": "Linux",
+                        "icon": "linux"
+                    },
+                    {
                         "name": "Neovim",
                         "icon": "neovim"
-                    },
-                    {
-                        "name": "Node.js",
-                        "icon": "node"
-                    },
-                    {
-                        "name": "GNU/Linux Ubuntu",
-                        "icon": "ubuntu"
-                    },
-                    {
-                        "name": "Vue 3",
-                        "icon": "vue3"
                     }
                 ]
             }
@@ -198,7 +214,7 @@
                 "title": "Blog",
                 "summary": "Blog personal en Vue.js (sin backend por el momento).",
                 "technologies": [
-                    "/skills/vue.png"
+                    "vue3"
                 ],
                 "image": "/projects/Blog.jpg",
                 "gif": "/projects/Blog.gif",
@@ -255,7 +271,7 @@
                     "React",
                     "Prism.js"
                 ],
-                "status": "En Desarrollo"
+                "status": "En desarrollo"
             }
         ]
     },
@@ -272,7 +288,7 @@
             "sendingButton": "Enviando...",
             "successMessage": "Mensaje enviado. Te contacto pronto.",
             "errorMessage": "Hubo un problema al enviar el mensaje.",
-            "configError": "Faltan variables de EmailJS en .env.local (SERVICE_ID / TEMPLATE_ID)."
+            "configError": "Falta configurar el servicio de correo para este formulario."
         },
         "social": [
             {

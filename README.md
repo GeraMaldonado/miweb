@@ -1,22 +1,30 @@
-# portfolio
+# miweb
 
-## Project setup
-```
+Web personal / portfolio de Gerardo Maldonado, construida con Next.js, React, TypeScript y Tailwind CSS.
+
+## Scripts
+
+```bash
 npm install
+npm run dev
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+### Producción
 
-### Compiles and minifies for production
-```
+```bash
 npm run build
+npm run start
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Variables de entorno
 
-## miweb
-Creacion de mi web personal
+Para el formulario de contacto, define:
+
+```bash
+NEXT_PUBLIC_MAIL_API_URL=
+NEXT_PUBLIC_MAIL_API_KEY=
+```
+
+## Objetivo
+
+Mostrar perfil profesional, stack tecnológico, proyectos destacados, trabajo en progreso y medios de contacto en una sola landing.

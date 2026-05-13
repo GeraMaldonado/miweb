@@ -26,8 +26,13 @@ export default function Contact() {
   const sendEmail = async (e: React.FormEvent) => {
     e.preventDefault()
 
-    const apiUrl = "http://localhost:3999/send"
-    const apiKey = "super_secret_mail"
+    const apiUrl = process.env.NEXT_PUBLIC_MAIL_API_URL
+    const apiKey = process.env.NEXT_PUBLIC_MAIL_API_KEY
+
+    if (!apiUrl) {
+      setStatus({ type: "error", message: formLabels.configError })
+      return
+    }
 
     setStatus({ type: "sending" })
 
