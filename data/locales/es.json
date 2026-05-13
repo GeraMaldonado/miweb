@@ -237,19 +237,19 @@
                 "slug": "siaz",
                 "title": "SIAZ - Sistema Integral de Artesanías Zacatecas",
                 "description": "Plataforma web para la promoción de talleres y productos artesanales de Zacatecas mediante un catálogo digital accesible al público.",
-                "progress": 45,
+                "progress": 23,
                 "tags": [
                     "Wordpress"
                 ],
-                "status": "Planificación"
+                "status": "En desarrollo"
             },
             {
                 "slug": "cuetionario-uadgp",
                 "title": "Cuestionario UADGP",
                 "description": "Sistema para la creación de cuestionarios y recopilación de datos, desarrollado para apoyar proyectos académicos de la Unidad Académica de Desarrollo y Gestión Pública.",
-                "progress": 20,
+                "progress": 85,
                 "tags": [],
-                "status": "Planificación"
+                "status": "En desarrollo"
             },
             {
                 "slug": "medidor-agua",
