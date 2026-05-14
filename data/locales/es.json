@@ -122,10 +122,6 @@
                     {
                         "name": "Linux",
                         "icon": "linux"
-                    },
-                    {
-                        "name": "Neovim",
-                        "icon": "neovim"
                     }
                 ]
             }
