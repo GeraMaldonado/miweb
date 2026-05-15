@@ -1,6 +1,9 @@
-import content from "@/data/locales/es.json"
+"use client"
+
+import { useI18n } from "@/data/i18n"
 
 export default function AboutMe() {
+  const { content } = useI18n()
   const { title, paragraphs, cvButton, contactButton, cards } = content.about
 
   return (

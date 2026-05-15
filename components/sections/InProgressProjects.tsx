@@ -1,19 +1,25 @@
-import content from "@/data/locales/es.json"
-import { InProgressProject, InProgressStatus } from "@/data/inProgress"
+"use client"
+
+import { useI18n } from "@/data/i18n"
+import { InProgressProject } from "@/data/inProgress"
 
 function getStatusColor(status: string) {
   const map: Record<string, string> = {
     "Beta": "text-[var(--good)]",
     "En progreso": "text-[var(--good)]",
+    "In progress": "text-[var(--good)]",
     "En desarrollo": "text-[var(--mid)]",
+    "In development": "text-[var(--mid)]",
     "Planificación": "text-[var(--bad)]",
+    "Planning": "text-[var(--bad)]",
   }
   return map[status] || "text-muted-foreground"
 }
 
 export default function InProgressProjects() {
+  const { content } = useI18n()
   const { title, progressLabel, items } = content.inProgress
-  const projects = items as unknown as InProgressProject[]
+  const projects = items as InProgressProject[]
 
   return (
     <section id="in-progress" className="scroll-mt-[var(--scroll-offset)] py-16">

@@ -1,8 +1,11 @@
-import content from "@/data/locales/es.json"
+"use client"
+
+import { useI18n } from "@/data/i18n"
 import { Project } from "@/data/projects"
 import ProjectCard from "@/components/ui/Card"
 
 export default function FeaturedProjects() {
+  const { content } = useI18n()
   const { title, items } = content.projects
   // Explicitly cast items to Project[] to match the type expected by ProjectCard if strictness requires it,
   // or rely on structural compatibility. "links" in JSON is object array, Type expects ProjectLink[].

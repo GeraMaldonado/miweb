@@ -1,11 +1,12 @@
 "use client"
 
 import { useEffect, useMemo, useState } from "react"
-import content from "@/data/locales/es.json"
+import { useI18n } from "@/data/i18n"
 
 type SkillWord = { text: string; className: string }
 
 export default function Hero() {
+  const { content } = useI18n()
   const { title, subtitle, skills } = content.hero
 
   const skillList: SkillWord[] = useMemo(

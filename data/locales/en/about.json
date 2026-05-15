@@ -1,0 +1,24 @@
+{
+  "title": "About me",
+  "paragraphs": [
+    "I am Gerardo Maldonado Félix, a Software Engineering student focused on web development and on building clear, useful, and maintainable solutions.",
+    "I mainly work with TypeScript, Node.js, React, Next.js, and SQL, moving across backend, frontend, and integration based on each project needs.",
+    "I am interested in solving real problems, optimizing processes, and taking ideas from requirements to a functional and polished delivery."
+  ],
+  "cvButton": "Download CV",
+  "contactButton": "Contact",
+  "cards": [
+    {
+      "title": "Process optimization",
+      "description": "I focus on improving flow and performance in development and technical solutions."
+    },
+    {
+      "title": "From requirements to deployment",
+      "description": "I participate in analysis, implementation, testing, and delivery in real environments."
+    },
+    {
+      "title": "Scalability and efficiency",
+      "description": "Priority on maintainable, clear solutions aligned with business needs."
+    }
+  ]
+}

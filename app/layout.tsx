@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 import Navigation from "@/components/layout/Navigation"
 import "./globals.css"
-import content from "@/data/locales/es.json"
+import { LanguageProvider } from "@/data/i18n"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: content.metadata.title,
-  description: content.metadata.description,
+  title: "Gerardo Maldonado | Portfolio",
+  description: "Personal web development portfolio",
 }
 
 export default function RootLayout({
@@ -29,12 +29,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <LanguageProvider>
+          <Navigation />
 
-        <Navigation />
-
-        <main>
-          {children}
-        </main>
+          <main>
+            {children}
+          </main>
+        </LanguageProvider>
       </body>
     </html>
   )

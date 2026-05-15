@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import content from "@/data/locales/es.json"
+import { useI18n } from "@/data/i18n"
 
 type FormState = {
   nombre: string
@@ -10,6 +10,7 @@ type FormState = {
 }
 
 export default function Contact() {
+  const { content, lang } = useI18n()
   const { title, info, form: formLabels, social, footer } = content.contact
 
   const [form, setForm] = useState<FormState>({
@@ -45,13 +46,9 @@ export default function Contact() {
         },
         body: JSON.stringify({
           to: info.email,
-          subject: "Mensaje de Portfolio",
+          subject: lang === "es" ? "Mensaje de Portfolio" : "Portfolio message",
           text: `
-Nombre: ${form.nombre}
-Email: ${form.email}
-
-Mensaje:
-${form.mensaje}
+${lang === "es" ? "Nombre" : "Name"}: ${form.nombre}\n${lang === "es" ? "Email" : "Email"}: ${form.email}\n\n${lang === "es" ? "Mensaje" : "Message"}:\n${form.mensaje}
           `.trim(),
           source: "Portfolio",
         }),

@@ -1,8 +1,11 @@
-import content from "@/data/locales/es.json"
+"use client"
+
+import { useI18n } from "@/data/i18n"
 import { SkillGroup } from "@/data/skills"
 
 export default function TechStack() {
-  const { title, groups } = content.techStack
+  const { content } = useI18n()
+  const { title, groups } = content.skills
   const skillGroups = groups as SkillGroup[]
 
   return (

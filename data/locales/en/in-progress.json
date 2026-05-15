@@ -1,0 +1,38 @@
+{
+  "title": "Projects in development",
+  "progressLabel": "Progress",
+  "items": [
+    {
+      "slug": "siaz",
+      "title": "SIAZ - Zacatecas Crafts Integrated System",
+      "description": "Web platform to promote workshops and handcrafted products from Zacatecas through a public digital catalog.",
+      "progress": 23,
+      "tags": ["Wordpress"],
+      "status": "In development"
+    },
+    {
+      "slug": "cuetionario-uadgp",
+      "title": "UADGP Questionnaire",
+      "description": "System for creating questionnaires and collecting data, developed to support academic projects in the Academic Unit of Development and Public Management.",
+      "progress": 85,
+      "tags": [],
+      "status": "In development"
+    },
+    {
+      "slug": "medidor-agua",
+      "title": "Water meter",
+      "description": "Water level monitoring system using sensors, with a mobile app to view readings in real time.",
+      "progress": 30,
+      "tags": ["Flutter"],
+      "status": "Planning"
+    },
+    {
+      "slug": "blog-personal",
+      "title": "Personal blog",
+      "description": "Blog focused on sharing experiences, projects, and reflections about technology and programming.",
+      "progress": 60,
+      "tags": ["TypeScript", "React", "Prism.js"],
+      "status": "In development"
+    }
+  ]
+}
