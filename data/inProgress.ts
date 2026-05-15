@@ -8,5 +8,3 @@ export type InProgressProject = {
   tags: string[]
   status: InProgressStatus
 }
-
-

@@ -1,0 +1,10 @@
+{
+  "title": "Gerardo Maldonado Félix",
+  "subtitle": "Desarrollador web full stack",
+  "skills": [
+    { "text": "Backend", "className": "text-primary" },
+    { "text": "Frontend", "className": "text-[var(--good)]" },
+    { "text": "Bases de datos", "className": "text-[var(--mid)]" },
+    { "text": "Despliegue", "className": "text-[var(--bad)]" }
+  ]
+}

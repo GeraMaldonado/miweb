@@ -1,0 +1,59 @@
+{
+  "title": "Proyectos destacados",
+  "items": [
+    {
+      "slug": "cecodic",
+      "title": "CECODIC",
+      "summary": "Plataforma de eventos para la institución CECODIC.",
+      "technologies": ["vue3", "mysql", "node", "express"],
+      "image": "/projects/cecodic.jpeg",
+      "gif": "/projects/cecodic.gif",
+      "architecture": "MVC",
+      "links": [{ "label": "Código", "href": "https://github.com/GeraMaldonado/cecodic" }],
+      "featured": true
+    },
+    {
+      "slug": "foro-hub",
+      "title": "Foro-Hub",
+      "summary": "Proyecto tipo foro con CRUD de tópicos y gestión de usuarios.",
+      "technologies": ["java", "spring", "mysql"],
+      "image": "/projects/Foro-Hub.jpg",
+      "gif": "/projects/Foro-Hub.gif",
+      "architecture": "MVC",
+      "links": [{ "label": "Código", "href": "https://github.com/GeraMaldonado/foro-hub" }],
+      "featured": true
+    },
+    {
+      "slug": "api-libros",
+      "title": "API-Libros",
+      "summary": "API para gestionar libros y autores, con consultas por consola.",
+      "technologies": ["java", "spring", "postgresql"],
+      "image": "/projects/API-Libros.jpg",
+      "gif": "/projects/API-Libros.gif",
+      "architecture": "MVC",
+      "links": [{ "label": "Código", "href": "https://github.com/GeraMaldonado/api-libros" }],
+      "featured": true
+    },
+    {
+      "slug": "calculadora-imc",
+      "title": "Calculadora-IMC",
+      "summary": "App para gestionar usuarios y cálculos de IMC, %GC y peso ideal.",
+      "technologies": ["csharp", "dotnet", "sqlite"],
+      "image": "/projects/Calculadora-IMC.jpg",
+      "gif": "/projects/Calculadora-IMC.gif",
+      "architecture": "MVVM",
+      "featured": true
+    },
+    {
+      "slug": "blog",
+      "title": "Blog",
+      "summary": "Blog personal en Vue.js (sin backend por el momento).",
+      "technologies": ["vue3"],
+      "image": "/projects/Blog.jpg",
+      "gif": "/projects/Blog.gif",
+      "architecture": "Component-Based",
+      "links": [{ "label": "Código", "href": "https://github.com/GeraMaldonado/myBlog" }],
+      "featured": false
+    }
+  ]
+}

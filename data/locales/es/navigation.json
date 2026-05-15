@@ -1,0 +1,17 @@
+{
+  "brand": {
+    "prefix": "<",
+    "text": "Dev ",
+    "suffix": "/>"
+  },
+  "items": [
+    { "id": "about", "label": "Sobre mí" },
+    { "id": "skills", "label": "Tecnologías" },
+    { "id": "featured", "label": "Proyectos" },
+    { "id": "in-progress", "label": "En progreso" },
+    { "id": "contact", "label": "Contacto" }
+  ],
+  "mobileMenuLabel": "Menú",
+  "mobileMenuAria": "Menú móvil",
+  "goToHomeAria": "Ir al inicio"
+}

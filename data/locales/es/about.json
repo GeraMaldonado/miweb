@@ -1,0 +1,24 @@
+{
+  "title": "Sobre mí",
+  "paragraphs": [
+    "Soy Gerardo Maldonado Félix, estudiante de Ingeniería en Software con enfoque en desarrollo web y gusto por construir soluciones claras, útiles y mantenibles.",
+    "Trabajo principalmente con TypeScript, Node.js, React, Next.js y SQL, moviéndome entre backend, frontend e integración según lo que el proyecto necesite.",
+    "Me interesa resolver problemas reales, optimizar procesos y llevar ideas desde los requerimientos hasta una entrega funcional y bien cuidada."
+  ],
+  "cvButton": "Descargar CV",
+  "contactButton": "Contacto",
+  "cards": [
+    {
+      "title": "Optimización de procesos",
+      "description": "Busco mejorar flujo y rendimiento en el desarrollo y en la solución técnica."
+    },
+    {
+      "title": "De requerimientos a despliegue",
+      "description": "Participo en análisis, implementación, pruebas y entrega en entorno real."
+    },
+    {
+      "title": "Escalabilidad y eficiencia",
+      "description": "Prioridad en soluciones mantenibles, claras y alineadas a necesidades del negocio."
+    }
+  ]
+}

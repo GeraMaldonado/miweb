@@ -1,0 +1,20 @@
+{
+  "title": "Contacto",
+  "info": { "email": "gmaldonadofelix@gmail.com" },
+  "form": {
+    "namePlaceholder": "Nombre",
+    "emailPlaceholder": "Correo",
+    "messagePlaceholder": "Mensaje",
+    "submitButton": "Enviar",
+    "sendingButton": "Enviando...",
+    "successMessage": "Mensaje enviado. Te contacto pronto.",
+    "errorMessage": "Hubo un problema al enviar el mensaje.",
+    "configError": "Falta configurar el servicio de correo para este formulario."
+  },
+  "social": [
+    { "label": "GitHub", "href": "https://github.com/GeraMaldonado", "icon": "github" },
+    { "label": "LinkedIn", "href": "https://www.linkedin.com/in/gerardo-maldonado-félix/", "icon": "linkedin" },
+    { "label": "WhatsApp", "href": "https://wa.me/524921244858", "icon": "whatsapp" }
+  ],
+  "footer": "GeraMaldonado© {year}"
+}

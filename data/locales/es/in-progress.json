@@ -1,0 +1,38 @@
+{
+  "title": "Proyectos en desarrollo",
+  "progressLabel": "Progreso",
+  "items": [
+    {
+      "slug": "siaz",
+      "title": "SIAZ - Sistema Integral de Artesanías Zacatecas",
+      "description": "Plataforma web para la promoción de talleres y productos artesanales de Zacatecas mediante un catálogo digital accesible al público.",
+      "progress": 23,
+      "tags": ["Wordpress"],
+      "status": "En desarrollo"
+    },
+    {
+      "slug": "cuetionario-uadgp",
+      "title": "Cuestionario UADGP",
+      "description": "Sistema para la creación de cuestionarios y recopilación de datos, desarrollado para apoyar proyectos académicos de la Unidad Académica de Desarrollo y Gestión Pública.",
+      "progress": 85,
+      "tags": [],
+      "status": "En desarrollo"
+    },
+    {
+      "slug": "medidor-agua",
+      "title": "Medidor de agua",
+      "description": "Sistema de monitoreo del nivel de agua mediante sensores, con una aplicación móvil para visualizar las lecturas en tiempo real.",
+      "progress": 30,
+      "tags": ["Flutter"],
+      "status": "Planificación"
+    },
+    {
+      "slug": "blog-personal",
+      "title": "Blog personal",
+      "description": "Blog dedicado a compartir experiencias, proyectos y reflexiones sobre tecnología y programación.",
+      "progress": 60,
+      "tags": ["TypeScript", "React", "Prism.js"],
+      "status": "En desarrollo"
+    }
+  ]
+}
