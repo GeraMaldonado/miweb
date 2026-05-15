@@ -16,6 +16,14 @@ npm run build
 npm run start
 ```
 
+### Export estático
+
+```bash
+npm run build:static
+```
+
+Salida en carpeta `out/`.
+
 ## Variables de entorno
 
 Para el formulario de contacto, define:
